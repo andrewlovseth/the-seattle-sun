@@ -1,1 +1,1 @@
-# the-seattle-sun
+# The Seattle Sun
