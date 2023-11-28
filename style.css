@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 
     Theme Name: The Seattle Sun
@@ -6,8 +7,6 @@
     Version: 1.0
 
 */
-@import url("https://cloud.typography.com/6104232/6511432/css/fonts.css");
-@import url("https://cloud.typography.com/6104232/6511432/css/fonts.css");
 @import url("https://cloud.typography.com/6104232/6511432/css/fonts.css");
 /* Box sizing rules */
 *,
@@ -93,6 +92,10 @@ textarea:not([rows]) {
 
 time {
   display: block;
+}
+
+body {
+  background: #fafafa;
 }
 
 /*
@@ -189,9 +192,8 @@ a {
 
 */
 .content-grid {
-  --padding-inline: 2rem;
   display: grid;
-  gap: 0 var(--padding-inline);
+  gap: 0 2rem;
   grid-template-columns: [full-width-start] minmax(0, auto) [content-start] repeat(4, minmax(auto, 1fr)) [content-end] minmax(0, auto) [full-width-end];
 }
 @media only screen and (min-width: 30rem) {
@@ -226,20 +228,28 @@ a {
 
 */
 .copy-1 {
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  font-size: clamp(1.125rem, 1.0375rem + 0.4375vw, 1.5625rem);
   line-height: 1.5;
 }
 
 .copy-2 {
-  font-size: clamp(0.79rem, 0.788rem + 0.01vw, 0.8rem);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
   line-height: 1.5;
 }
 
 .copy-3 {
-  font-size: clamp(0.64rem, 0.715rem - 0.0625vw, 0.7025rem);
+  font-size: 16px;
   line-height: 1.5;
 }
 
+/*
+
+    Theme Name: The Seattle Sun
+    Theme URI: https://theseattlesun.com/
+    Description: Version 1.0 of The Seattle Sun
+    Version: 1.0
+
+*/
 .divider > * {
   width: 100%;
   height: 1px;
@@ -251,9 +261,6 @@ a {
   background: rgba(0, 0, 0, 0.33);
 }
 
-.triple-divider {
-  padding: 2rem 0;
-}
 .triple-divider .middle {
   margin: 0.25rem 0;
 }
@@ -266,27 +273,40 @@ a {
   margin-top: 0.25rem;
 }
 
-.site-header {
+/*
+
+    Theme Name: The Seattle Sun
+    Theme URI: https://theseattlesun.com/
+    Description: Version 1.0 of The Seattle Sun
+    Version: 1.0
+
+*/
+.issue {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.issue-header {
   margin-top: 4rem;
 }
-.site-header .nameplate {
+.issue-header .nameplate {
   display: flex;
   justify-content: center;
   flex-basis: 50%;
   padding-block: 1rem;
 }
-.site-header .nameplate__link {
+.issue-header .nameplate__link {
   display: block;
   max-width: 20rem;
 }
-.site-header .nameplate svg {
+.issue-header .nameplate svg {
   width: 100%;
 }
-.site-header .edition {
+.issue-header .edition {
   flex-basis: 25%;
   line-height: 1;
 }
-.site-header .edition__name {
+.issue-header .edition__name {
   display: block;
   font-family: "Mercury Text G4 A", "Mercury Text G4 B";
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
@@ -295,7 +315,7 @@ a {
   letter-spacing: 0.05em;
   opacity: 0.8;
 }
-.site-header .edition__tagline {
+.issue-header .edition__tagline {
   display: block;
   font-family: "Chronicle Text G1 A", "Chronicle Text G1 B";
   font-size: clamp(0.79rem, 0.788rem + 0.01vw, 0.8rem);
@@ -305,12 +325,12 @@ a {
   color: #4a4a4a;
   padding-top: 0.25rem;
 }
-.site-header .published {
+.issue-header .published {
   flex-basis: 25%;
   line-height: 1;
   text-align: right;
 }
-.site-header .published__issue {
+.issue-header .published__issue {
   display: block;
   font-family: "Mercury Text G4 A", "Mercury Text G4 B";
   font-size: clamp(0.64rem, 0.715rem - 0.0625vw, 0.7025rem);
@@ -318,10 +338,150 @@ a {
   letter-spacing: 0.15em;
   color: #6a6a6a;
 }
-.site-header .published__date {
+.issue-header .published__date {
   display: block;
   font-family: "Chronicle DeckCond A", "Chronicle DeckCond B";
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
   letter-spacing: 0.025em;
   padding-block-start: 0.25rem;
+}
+
+.issue-body {
+  gap: 2rem;
+}
+
+/*
+
+    Theme Name: The Seattle Sun
+    Theme URI: https://theseattlesun.com/
+    Description: Version 1.0 of The Seattle Sun
+    Version: 1.0
+
+*/
+.category-badge {
+  display: inline-block;
+  font-family: "Decimal A", "Decimal B";
+  font-size: clamp(0.5119rem, 0.6469rem - 0.1125vw, 0.6244rem);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/*
+
+    Theme Name: The Seattle Sun
+    Theme URI: https://theseattlesun.com/
+    Description: Version 1.0 of The Seattle Sun
+    Version: 1.0
+
+*/
+.lead {
+  display: grid;
+  gap: 0 1.5rem;
+  grid-template-columns: 1.25fr 0.75fr 3fr;
+}
+.lead__header {
+  text-align: right;
+}
+.lead__headline {
+  font-family: "Chronicle DeckCond A", "Chronicle DeckCond B";
+  font-size: clamp(1.6019rem, 1.3119rem + 1.45vw, 3.0519rem);
+  font-weight: 100;
+  line-height: 1;
+  padding-top: 0.5rem;
+}
+.lead__dek {
+  font-size: clamp(0.8888rem, 0.8665rem + 0.1113vw, 1rem);
+  font-style: italic;
+  padding-top: 1rem;
+}
+.lead__author {
+  display: inline-block;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-left: 0.5rem;
+  font-family: "Mercury Text G4 A", "Mercury Text G4 B";
+  font-size: clamp(0.8888rem, 0.8665rem + 0.1113vw, 1rem);
+  color: #2a2a2a;
+  letter-spacing: 0.025em;
+}
+.lead__photo {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 0.5rem;
+}
+.lead__photo--caption {
+  font-size: clamp(0.79rem, 0.788rem + 0.01vw, 0.8rem);
+  line-height: 1.25em;
+  font-style: italic;
+}
+.lead__photo--credit {
+  font-size: clamp(0.64rem, 0.715rem - 0.0625vw, 0.7025rem);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #2a2a2a;
+}
+.lead__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.lead__body {
+  position: relative;
+}
+.lead__body:before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: -0.75rem;
+  right: auto;
+}
+.lead__copy {
+  --flow-spacer: 0;
+  text-indent: 1.25rem;
+  -moz-columns: 3;
+       columns: 3;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.lead__copy:before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: calc(33.3333% - 0.375rem);
+  right: auto;
+}
+.lead__copy:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 66.6667%;
+  right: auto;
+}
+.lead__copy p:first-child {
+  text-indent: 0;
+}
+.lead__copy p:first-child::first-letter {
+  initial-letter: 2 2;
+  font-family: "Chronicle Text G1 A", "Chronicle Text G1 B";
+  margin-right: 0.25rem;
+}
+.lead__copy p:last-child::after {
+  content: " ◆";
+  font-size: 80%;
 }

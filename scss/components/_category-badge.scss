@@ -1,0 +1,10 @@
+@use "./abstracts" as *;
+
+.category-badge {
+    display: inline-block;
+    font-family: $decimal;
+    font-size: $type-size-050;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}

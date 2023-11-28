@@ -1,6 +1,11 @@
 @use "./abstracts" as *;
 
-.site-header {
+.issue {
+    display: grid;
+    gap: $spacing-500;
+}
+
+.issue-header {
     margin-top: 4rem;
 
     .nameplate {
@@ -67,4 +72,8 @@
             padding-block-start: $spacing-100;
         }
     }
+}
+
+.issue-body {
+    gap: $spacing-600;
 }

@@ -1,0 +1,26 @@
+@mixin column-divider-before($left, $right) {
+    &:before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 1px;
+        background: rgba(0, 0, 0, 0.1);
+        position: absolute;
+        left: $left;
+        right: $right;
+    }
+}
+
+@mixin column-divider-after($left, $right) {
+    &:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 1px;
+        background: rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 0;
+        left: $left;
+        right: $right;
+    }
+}
