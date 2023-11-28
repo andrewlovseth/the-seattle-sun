@@ -1,0 +1,36 @@
+@use "./abstracts" as *;
+
+.divider {
+    & > * {
+        width: 100%;
+        height: 1px;
+    }
+
+    .dark {
+        background: rgba($black, 1);
+    }
+
+    .light {
+        background: rgba($black, 0.33);
+    }
+}
+
+.triple-divider {
+    padding: 2rem 0;
+
+    .middle {
+        margin: 0.25rem 0;
+    }
+}
+
+.top-divider {
+    .top {
+        margin-bottom: 0.25rem;
+    }
+}
+
+.bottom-divider {
+    .bottom {
+        margin-top: 0.25rem;
+    }
+}

@@ -6,3 +6,322 @@
     Version: 1.0
 
 */
+@import url("https://cloud.typography.com/6104232/6511432/css/fonts.css");
+@import url("https://cloud.typography.com/6104232/6511432/css/fonts.css");
+@import url("https://cloud.typography.com/6104232/6511432/css/fonts.css");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin-block: 0;
+}
+
+/* Remove list styles on ul, ol elements with a nav role, which suggests default styling will be removed */
+ul[role=nav],
+ol[role=nav] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+time {
+  display: block;
+}
+
+/*
+
+    Theme Name: The Seattle Sun
+    Theme URI: https://theseattlesun.com/
+    Description: Version 1.0 of The Seattle Sun
+    Version: 1.0
+
+*/
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  font-family: "Chronicle Text G1 A", "Chronicle Text G1 B";
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+::-moz-selection {
+  background: #f28675;
+  text-shadow: none;
+}
+
+::selection {
+  background: #f28675;
+  color: #fff;
+  text-shadow: none;
+}
+
+/*
+
+    Theme Name: The Seattle Sun
+    Theme URI: https://theseattlesun.com/
+    Description: Version 1.0 of The Seattle Sun
+    Version: 1.0
+
+*/
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.place-center {
+  place-content: center;
+}
+
+/*
+
+    Theme Name: The Seattle Sun
+    Theme URI: https://theseattlesun.com/
+    Description: Version 1.0 of The Seattle Sun
+    Version: 1.0
+
+*/
+.content-grid {
+  --padding-inline: 2rem;
+  display: grid;
+  gap: 0 var(--padding-inline);
+  grid-template-columns: [full-width-start] minmax(0, auto) [content-start] repeat(4, minmax(auto, 1fr)) [content-end] minmax(0, auto) [full-width-end];
+}
+@media only screen and (min-width: 30rem) {
+  .content-grid {
+    grid-template-columns: [full-width-start] minmax(0, auto) [content-start] repeat(8, minmax(auto, 1fr)) [content-end] minmax(0, auto) [full-width-end];
+  }
+}
+@media only screen and (min-width: 62rem) {
+  .content-grid {
+    grid-template-columns: [full-width-start] minmax(0, auto) [content-start] repeat(3, minmax(0, 6rem)) [narrow-start] repeat(6, minmax(0, 6rem)) [narrow-end] repeat(3, minmax(0, 6rem)) [content-end] minmax(0, auto) [full-width-end];
+  }
+}
+.content-grid > * {
+  grid-column: content;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-spacer, 1rem);
+}
+.flow > .wp-block-separator {
+  border-color: rgba(0, 0, 0, 0.1);
+  margin-block-start: 2rem !important;
+  margin-block-end: 2rem !important;
+}
+
+/*
+
+    Theme Name: The Seattle Sun
+    Theme URI: https://theseattlesun.com/
+    Description: Version 1.0 of The Seattle Sun
+    Version: 1.0
+
+*/
+.copy-1 {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.copy-2 {
+  font-size: clamp(0.79rem, 0.788rem + 0.01vw, 0.8rem);
+  line-height: 1.5;
+}
+
+.copy-3 {
+  font-size: clamp(0.64rem, 0.715rem - 0.0625vw, 0.7025rem);
+  line-height: 1.5;
+}
+
+.divider > * {
+  width: 100%;
+  height: 1px;
+}
+.divider .dark {
+  background: black;
+}
+.divider .light {
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.triple-divider {
+  padding: 2rem 0;
+}
+.triple-divider .middle {
+  margin: 0.25rem 0;
+}
+
+.top-divider .top {
+  margin-bottom: 0.25rem;
+}
+
+.bottom-divider .bottom {
+  margin-top: 0.25rem;
+}
+
+.site-header {
+  margin-top: 4rem;
+}
+.site-header .nameplate {
+  display: flex;
+  justify-content: center;
+  flex-basis: 50%;
+  padding-block: 1rem;
+}
+.site-header .nameplate__link {
+  display: block;
+  max-width: 20rem;
+}
+.site-header .nameplate svg {
+  width: 100%;
+}
+.site-header .edition {
+  flex-basis: 25%;
+  line-height: 1;
+}
+.site-header .edition__name {
+  display: block;
+  font-family: "Mercury Text G4 A", "Mercury Text G4 B";
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+.site-header .edition__tagline {
+  display: block;
+  font-family: "Chronicle Text G1 A", "Chronicle Text G1 B";
+  font-size: clamp(0.79rem, 0.788rem + 0.01vw, 0.8rem);
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #4a4a4a;
+  padding-top: 0.25rem;
+}
+.site-header .published {
+  flex-basis: 25%;
+  line-height: 1;
+  text-align: right;
+}
+.site-header .published__issue {
+  display: block;
+  font-family: "Mercury Text G4 A", "Mercury Text G4 B";
+  font-size: clamp(0.64rem, 0.715rem - 0.0625vw, 0.7025rem);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #6a6a6a;
+}
+.site-header .published__date {
+  display: block;
+  font-family: "Chronicle DeckCond A", "Chronicle DeckCond B";
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  letter-spacing: 0.025em;
+  padding-block-start: 0.25rem;
+}

@@ -1,0 +1,70 @@
+@use "./abstracts" as *;
+
+.site-header {
+    margin-top: 4rem;
+
+    .nameplate {
+        display: flex;
+        justify-content: center;
+        flex-basis: 50%;
+        padding-block: $spacing-400;
+
+        &__link {
+            display: block;
+            max-width: 20rem;
+        }
+
+        svg {
+            width: 100%;
+        }
+    }
+
+    .edition {
+        flex-basis: 25%;
+        line-height: 1;
+
+        &__name {
+            display: block;
+            font-family: $mercury-small-caps;
+            font-size: $type-size-400;
+            font-weight: 400;
+            text-transform: lowercase;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+        }
+
+        &__tagline {
+            display: block;
+            font-family: $chronicle;
+            font-size: $type-size-200;
+            font-style: italic;
+            text-transform: none;
+            letter-spacing: 0;
+            color: #4a4a4a;
+            padding-top: $spacing-100;
+        }
+    }
+
+    .published {
+        flex-basis: 25%;
+        line-height: 1;
+        text-align: right;
+
+        &__issue {
+            display: block;
+            font-family: $mercury-small-caps;
+            font-size: $type-size-100;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #6a6a6a;
+        }
+
+        &__date {
+            display: block;
+            font-family: $chronicle-deck;
+            font-size: $type-size-400;
+            letter-spacing: 0.025em;
+            padding-block-start: $spacing-100;
+        }
+    }
+}

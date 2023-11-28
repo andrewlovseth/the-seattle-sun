@@ -21,7 +21,7 @@ function watch() {
     gulp.watch("./scss/**/*.scss", style);
 
     gulp.watch("./*.php").on("change", browserSync.reload);
-    gulp.watch("./template-parts/**/*.php").on("change", browserSync.reload);
+    gulp.watch("./components/**/*.php").on("change", browserSync.reload);
     gulp.watch("./templates/**/*.php").on("change", browserSync.reload);
 
     gulp.watch("./js/**/*.js").on("change", browserSync.reload);

@@ -1,0 +1,11 @@
+.flow {
+    & > * + * {
+        margin-block-start: var(--flow-spacer, 1rem);
+    }
+
+    & > .wp-block-separator {
+        border-color: rgba(black, 0.1);
+        margin-block-start: 2rem !important;
+        margin-block-end: 2rem !important;
+    }
+}
