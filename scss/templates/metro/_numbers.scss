@@ -1,0 +1,47 @@
+@use "./abstracts" as *;
+
+.numbers {
+    display: grid;
+    gap: $spacing-500;
+
+    &__list {
+        display: grid;
+        gap: $spacing-500;
+        align-items: start;
+
+        @include mq(desktop-small) {
+            gap: $spacing-700;
+            grid-template-columns: subgrid;
+
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+}
+
+.number {
+    display: grid;
+    gap: $spacing-300;
+
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        gap: $spacing-300;
+        padding-bottom: $spacing-300;
+        border-bottom: 1px solid $gray-200;
+    }
+
+    &__stat {
+        font-size: $type-size-800;
+        font-family: $chronicle-deck;
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    &__label {
+        font-size: $type-size-200;
+        font-weight: 500;
+        text-wrap: balance;
+
+        font-family: $decimal;
+    }
+}

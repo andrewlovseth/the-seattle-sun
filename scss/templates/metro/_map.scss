@@ -1,0 +1,28 @@
+@use "./abstracts" as *;
+
+.map {
+    display: grid;
+    gap: $spacing-500 $spacing-700;
+    grid-template-columns: subgrid;
+
+    &__placeholder {
+        grid-column: 1 / -1;
+
+        aspect-ratio: 4 / 3;
+        background-color: #e4efd2;
+        border: 1px solid #5d8024;
+
+        @include mq(desktop-small) {
+            grid-row: 1;
+            grid-column: 1 / span 8;
+        }
+    }
+
+    &__list {
+        grid-column: 1 / -1;
+        @include mq(desktop-small) {
+            grid-row: 1;
+            grid-column: 9 / span 4;
+        }
+    }
+}
