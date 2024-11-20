@@ -1,0 +1,15 @@
+@use "./abstracts" as *;
+
+.section-header {
+    display: grid;
+    gap: $spacing-400;
+    text-align: center;
+}
+
+.section-title {
+    font-family: $mercury-display;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: $type-size-400;
+    font-weight: 400;
+}

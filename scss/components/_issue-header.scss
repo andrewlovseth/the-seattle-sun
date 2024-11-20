@@ -75,5 +75,10 @@
 }
 
 .issue-body {
-    gap: $spacing-600;
+    gap: $spacing-500 $spacing-700;
+    align-items: start;
+
+    @include mq(desktop-small) {
+        gap: $spacing-700 $spacing-700;
+    }
 }

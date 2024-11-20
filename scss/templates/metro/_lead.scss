@@ -1,14 +1,29 @@
 @use "./abstracts" as *;
-
-$column-spacing: $spacing-500;
+@use "sass:color";
 
 .lead {
     display: grid;
-    gap: 0 $column-spacing;
-    grid-template-columns: 1.25fr 0.75fr 3fr;
+    gap: $spacing-500;
+
+    @include mq(desktop-small) {
+        grid-column: 2 / span 8;
+    }
 
     &__header {
-        text-align: right;
+        display: grid;
+        gap: $spacing-300;
+        align-items: end;
+
+        @include mq(desktop-medium) {
+            gap: $spacing-500;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+        }
+    }
+
+    &__info {
+        @include mq(desktop-medium) {
+            padding-bottom: $spacing-300;
+        }
     }
 
     &__headline {
@@ -16,11 +31,10 @@ $column-spacing: $spacing-500;
         font-size: $type-size-800;
         font-weight: 100;
         line-height: 1;
-        padding-top: $spacing-200;
     }
 
     &__dek {
-        font-size: $type-size-300;
+        font-size: $type-size-400;
         font-style: italic;
         padding-top: $spacing-400;
     }
@@ -41,20 +55,24 @@ $column-spacing: $spacing-500;
     &__photo {
         display: grid;
         grid-template-rows: 1fr auto;
-        gap: $spacing-200;
+        gap: $spacing-100;
 
         &--caption {
-            font-size: $type-size-200;
-            line-height: 1.25em;
+            font-size: $type-size-300;
+            text-wrap: balance;
+            line-height: 1.375em;
             font-style: italic;
         }
 
         &--credit {
+            display: block;
             font-size: $type-size-100;
             font-style: normal;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             color: #2a2a2a;
+            line-height: 1.25em;
+            text-align: left;
         }
     }
 
@@ -67,17 +85,17 @@ $column-spacing: $spacing-500;
 
     &__body {
         position: relative;
-        @include column-divider-before(calc(-1 * ($column-spacing / 2)), auto);
     }
 
     &__copy {
         --flow-spacer: 0;
         text-indent: 1.25rem;
-        columns: 3;
-        column-gap: $column-spacing;
-        @include column-divider-before(calc(33.3333% - ($column-spacing / 4)), auto);
-        @include column-divider-after(66.6667%, auto);
 
+        @include mq(desktop-medium) {
+            columns: 2;
+            column-gap: $column-spacing;
+            @include column-divider-after(50%, auto);
+        }
         p:first-child {
             text-indent: 0;
 
@@ -93,6 +111,74 @@ $column-spacing: $spacing-500;
                 content: " ◆";
                 font-size: 80%;
             }
+        }
+    }
+}
+
+.subscribe {
+    background: #f5f5f5;
+    padding: $spacing-500;
+    border: 1px solid $gray-200;
+
+    &__headline {
+        font-family: $decimal;
+        font-size: $type-size-100;
+        font-weight: 100;
+        margin-bottom: $spacing-300;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    &__form {
+        display: flex;
+        align-items: center;
+    }
+
+    &__input {
+        flex: 1;
+        border: 1px solid $gray-200;
+        padding: $spacing-200 $spacing-300 $spacing-200 $spacing-700;
+        font-family: $chronicle-deck;
+        height: 3.5rem;
+        border-radius: 0;
+        font-size: $type-size-500;
+        color: $gray-900;
+        background-image: url(svg/icon-paper-airplane.svg);
+        background-repeat: no-repeat;
+        background-position: left $spacing-300 center;
+        background-size: 1.5rem;
+
+        @include placeholder {
+            color: $gray-900;
+            font-style: italic;
+        }
+
+        &:focus {
+            outline-color: $orange;
+            outline-width: 1px;
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        font-family: $decimal;
+        height: 3.5rem;
+        background: $orange;
+        color: $white;
+        border: none;
+        font-size: $type-size-100;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        border-radius: 0;
+        padding: 0 $spacing-600;
+        white-space: nowrap;
+
+        &:focus {
+            outline-color: color.adjust($orange, $lightness: -5%);
+        }
+
+        &:hover {
+            cursor: pointer;
         }
     }
 }

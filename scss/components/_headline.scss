@@ -1,0 +1,47 @@
+@use "./abstracts" as *;
+
+.headline {
+    &__title {
+        font-weight: 400;
+        font-size: $type-size-400;
+        line-height: 1.5;
+
+        @include mq(desktop-small) {
+            font-size: $type-size-300;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        strong {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.05em;
+            font-family: $mercury-display;
+        }
+    }
+
+    &__category {
+        padding-top: $spacing-100;
+        text-align: right;
+
+        &-link {
+            font-size: $type-size-050;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-block;
+            font-family: $decimal;
+            color: $gray-500;
+            transition: all 200ms ease;
+
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 0.33em;
+                text-decoration-color: $gray-300;
+            }
+        }
+    }
+}
