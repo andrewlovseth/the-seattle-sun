@@ -28,15 +28,31 @@ function bearsmith_disable_editor( $id = false ) {
 
 // Disable Gutenberg by template
 function bearsmith_disable_gutenberg( $can_edit, $post_type ) {
+    // Disable Gutenberg for 'metro' post type
+    if( $post_type === 'metro' ) {
+        return false;
+    }
 
-	if( ! ( is_admin() && !empty( $_GET['post'] ) ) )
-		return $can_edit;
+    // Check if we're in admin and have a post ID
+    if( ! ( is_admin() && !empty( $_GET['post'] ) ) )
+        return $can_edit;
 
-	if( bearsmith_disable_editor( $_GET['post'] ) )
-		$can_edit = false;
+    // Get the post ID
+    $post_id = $_GET['post'];
 
-	return $can_edit;
+    // Check for specific format terms
+    $format_terms = wp_get_post_terms($post_id, 'format', array('fields' => 'slugs'));
+    $disabled_formats = array('photos', 'quote', 'on-the-web', 'around-town', 'by-the-numbers');
+    
+    if (!empty($format_terms) && array_intersect($format_terms, $disabled_formats)) {
+        return false;
+    }
 
+    // Check template exclusions
+    if( bearsmith_disable_editor( $post_id ) )
+        $can_edit = false;
+
+    return $can_edit;
 }
 add_filter( 'gutenberg_can_edit_post_type', 'bearsmith_disable_gutenberg', 10, 2 );
 add_filter( 'use_block_editor_for_post_type', 'bearsmith_disable_gutenberg', 10, 2 );
@@ -55,3 +71,4 @@ function bearsmith_disable_classic_editor() {
 
 }
 add_action( 'admin_head', 'bearsmith_disable_classic_editor' );
+

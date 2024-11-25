@@ -1,6 +1,6 @@
 	</main> <?php //.site-content ?>
 
-	<footer class="site-footer grid">
+	<footer class="site-footer">
 
 	</footer>
 

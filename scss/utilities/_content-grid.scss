@@ -2,7 +2,7 @@
 
 .content-grid {
     display: grid;
-    gap: 0 $spacing-700;
+    gap: 0 $spacing-600;
     grid-template-columns:
         [full-width-start] minmax(0, auto)
         [content-start]
@@ -20,6 +20,8 @@
     }
 
     @include mq(desktop-small) {
+        gap: 0 $spacing-700;
+
         grid-template-columns:
             [full-width-start] minmax(0, auto)
             [content-start]

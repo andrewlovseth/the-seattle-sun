@@ -1,0 +1,19 @@
+@use "./abstracts" as *;
+
+.site-header {
+    background: $gray-950;
+    height: 2rem;
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: $gray-400;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+    }
+}

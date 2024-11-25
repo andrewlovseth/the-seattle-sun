@@ -1,13 +1,13 @@
-<header class="issue-header content-grid">
+<header class="issue-header | content-grid">
     <?php get_template_part('components/dividers/top-divider'); ?>
 
-    <div class="flex justify-between items-center">
+    <div class="issue-header__grid">
+        <?php get_template_part('components/issue-header/nameplate'); ?>
+
         <div class="edition">
             <span class="edition__name">Metro</span>
             <span class="edition__tagline">Local News from the Pacific Northwest</span>
         </div>
-
-        <?php get_template_part('components/issue-header/nameplate'); ?>
 
         <div class="published">
             <span class="published__issue">Issue No. 001</span>

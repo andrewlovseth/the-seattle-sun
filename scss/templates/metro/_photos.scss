@@ -1,0 +1,12 @@
+@use "./abstracts" as *;
+
+.photos {
+    display: grid;
+    gap: $spacing-500;
+
+    &__grid {
+        display: grid;
+        gap: $spacing-400;
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    }
+}

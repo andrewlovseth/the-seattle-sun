@@ -1,3 +1,9 @@
+@use "./abstracts" as *;
 body {
-    background: #fafafa;
+    background: $gray-50;
+}
+
+.site {
+    display: grid;
+    gap: $spacing-700;
 }

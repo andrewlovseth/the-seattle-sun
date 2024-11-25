@@ -1,38 +1,47 @@
-<section class="numbers">
-    <?php get_template_part('components/headers/section', null, ['title' => 'By the Numbers']); ?>
+<?php
 
-    <div class="numbers__list">
-        <article class="number">
-            <div class="number__header">
-                <h3 class="number__stat">3.9%</h3>
-                <p class="number__label">October 2023<br/>U.S. Unemployment Rate</p>
-            </div>
+    $args = wp_parse_args($args);
 
-            <div class="number__copy | copy-3">
-                <p>Lorem ipsum dolor sit amet consectetur. Enim pharetra nunc at egestas aliquam molestie neque et velit. Aliquam nibh lectus fames neque lectus curabitur curabitur sed.</p>
-            </div>
-        </article>
+    if(!empty($args)) {
+        $metro_id = $args['metro_id']; 
+    }
 
-        <article class="number">
-            <div class="number__header">
-                <h3 class="number__stat">$4.39</h3>
-                <p class="number__label">Average cost of a gallon gasoline in the Seattle Metropolitan Area</p>
-            </div>
+    $by_the_numbers = get_field('by_the_numbers', $metro_id);
+    $numbers = get_field('numbers', $by_the_numbers->ID);
+    if( $numbers ):
+?>
 
-            <div class="number__copy | copy-3">
-                <p>Lorem ipsum dolor sit amet consectetur. Enim pharetra nunc at egestas aliquam molestie neque et velit.</p>
-            </div>
-        </article>
+    <section class="numbers">
+        <?php get_template_part('components/headers/section', null, ['title' => 'By the Numbers']); ?>
 
-        <article class="number">
-            <div class="number__header">
-                <h3 class="number__stat">21,800</h3>
-                <p class="number__label">OL Reign attendance at Lumen Field on Thursday, October 29th</p>
-            </div>
+        <div class="numbers__list">
 
-            <div class="number__copy | copy-3">
-                <p>Lorem ipsum dolor sit amet consectetur. Enim pharetra nunc at egestas aliquam molestie neque et velit. Aliquam nibh lectus fames neque lectus curabitur curabitur sed.</p>
-            </div>
-        </article>        
-    </div>
-</section>
+            <?php if(have_rows('numbers', $by_the_numbers->ID)): while(have_rows('numbers', $by_the_numbers->ID)) : the_row(); ?>
+
+                <?php if( get_row_layout() == 'number' ): ?>
+
+                    <?php
+                        $headline = get_sub_field('headline');
+                        $sub_headline = get_sub_field('sub_headline');
+                        $copy = get_sub_field('copy');
+                    ?>
+
+                    <article class="number">
+                        <div class="number__header">
+                            <h3 class="number__stat"><?php echo $headline; ?></h3>
+                            <p class="number__label"><?php echo $sub_headline; ?></p>
+                        </div>
+
+                        <div class="number__copy | copy-2">
+                            <?php echo $copy; ?>
+                        </div>
+                    </article>
+
+                <?php endif; ?>
+
+            <?php endwhile; endif; ?>
+
+        </div>
+    </section>
+
+<?php endif; ?>

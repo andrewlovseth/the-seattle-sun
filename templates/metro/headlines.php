@@ -1,90 +1,39 @@
+<?php
+    if(!empty($args)) {
+        $metro_id = $args['metro_id']; 
+    }
+
+    $headlines = get_field('headlines', $metro_id);
+
+?>
+
 <section class="headlines">
     <?php get_template_part('components/headers/section', null, ['title' => 'Headlines']); ?>
 
     <div class="headlines__list">
-        <article class="headline">
-            <h3 class="headline__title | copy-3">
-                <strong>Sue Bird returning to Storm for 19th WNBA season:</strong> The point guard announced her decision to play another season Friday. Bird has won five Olympic Gold Medals with Team USA and 4 WNBA Championships with the Storm.
-            </h3>
+        <?php foreach($headlines as $h): ?>     
+            <?php
+                $headline = get_the_title($h->ID);
+                $content = wp_strip_all_tags(get_post_field('post_content', $h->ID));
+                $primary_category = get_primary_category_name($h->ID);
+                $post_thumbnail = get_the_post_thumbnail($h->ID, 'thumbnail', ['class' => 'headline__image']);
+            ?>
+            <article class="headline">
 
-            <div class="headline__category">    
-                <a href="#" class="headline__category-link">Seattle Storm</a>
-            </div>
-        </article>
 
-        <article class="headline">
-            <h3 class="headline__title | copy-3">
-                <strong>Unemployment falls to 3.9%, nearing pre-pandemic levels:</strong> In Washington State, the minimum wage rose from $13.69 to $14.49 on January 1st. In Seattle the minimum wage was reset to $17.27 adjusted for inflation.
-            </h3>
+                <h3 class="headline__title | copy-2<?php if($post_thumbnail): ?> | headline__title--has-image<?php endif; ?>">
+                    <?php if($post_thumbnail): ?>
+                        <div class="headline__image"><?php echo $post_thumbnail; ?></div>
+                    <?php endif; ?>
 
-            <div class="headline__category">    
-                <a href="#" class="headline__category-link">Labor Market</a>
-            </div>
-        </article>
+                    <span><strong><?php echo $headline; ?></strong> &mdash; <?php echo $content; ?></span>
+                </h3>
 
-        <article class="headline">
-            <h3 class="headline__title | copy-3">
-                <strong>10% of Alaska Airlines Flights cancelled in January:</strong> In an effort to combat staff shortages due to Covid and wintery weather at Sea-Tac, the Seattle airline has proactively thinned its schedule for the month. 
-            </h3>
-
-            <div class="headline__category">    
-                <a href="#" class="headline__category-link">Travel</a>
-            </div>
-        </article>
-
-        <article class="headline">
-            <h3 class="headline__title | copy-3">
-                <strong>10% of Alaska Airlines Flights cancelled in January:</strong> In an effort to combat staff shortages due to Covid and wintery weather at Sea-Tac, the Seattle airline has proactively thinned its schedule for the month. 
-            </h3>
-
-            <div class="headline__category">    
-                <a href="#" class="headline__category-link">Travel</a>
-            </div>
-        </article>
-
-        <article class="headline">
-            <h3 class="headline__title | copy-3">
-                <strong>10% of Alaska Airlines Flights cancelled in January:</strong> In an effort to combat staff shortages due to Covid and wintery weather at Sea-Tac, the Seattle airline has proactively thinned its schedule for the month. 
-            </h3>
-
-            <div class="headline__category">    
-                <a href="#" class="headline__category-link">Travel</a>
-            </div>
-        </article>
-        
-        <article class="headline">
-            <h3 class="headline__title | copy-3">
-                <strong>10% of Alaska Airlines Flights cancelled in January:</strong> In an effort to combat staff shortages due to Covid and wintery weather at Sea-Tac, the Seattle airline has proactively thinned its schedule for the month. 
-            </h3>
-
-            <div class="headline__category">    
-                <a href="#" class="headline__category-link">Travel</a>
-            </div>
-        </article>
-        
-        <article class="headline">
-            <h3 class="headline__title | copy-3">
-                <strong>10% of Alaska Airlines Flights cancelled in January:</strong> In an effort to combat staff shortages due to Covid and wintery weather at Sea-Tac, the Seattle airline has proactively thinned its schedule for the month. 
-            </h3>
-
-            <div class="headline__category">    
-                <a href="#" class="headline__category-link">Travel</a>
-            </div>
-        </article>
-        
-        <article class="headline">
-            <h3 class="headline__title | copy-3">
-                <strong>10% of Alaska Airlines Flights cancelled in January:</strong> In an effort to combat staff shortages due to Covid and wintery weather at Sea-Tac, the Seattle airline has proactively thinned its schedule for the month. 
-            </h3>
-
-            <div class="headline__category">    
-                <a href="#" class="headline__category-link">Travel</a>
-            </div>
-        </article>
-
+                <?php if($primary_category): ?>
+                    <span class="category-badge"><?php echo $primary_category; ?></span>
+                <?php endif; ?>
+            </article>
+        <?php endforeach; ?>
 
     </div>
-
-
-
 </section>

@@ -7,11 +7,11 @@
     }
 
     .dark {
-        background: rgba($black, 1);
+        background: $gray-1000;
     }
 
     .light {
-        background: rgba($black, 0.33);
+        background: $gray-300;
     }
 }
 
@@ -30,5 +30,17 @@
 .bottom-divider {
     .bottom {
         margin-top: $spacing-100;
+    }
+}
+
+.single-divider {
+    display: none;
+
+    @include mq(desktop-small) {
+        display: block;
+    }
+
+    .middle {
+        background: $gray-100;
     }
 }

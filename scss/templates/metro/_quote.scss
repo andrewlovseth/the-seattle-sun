@@ -1,0 +1,73 @@
+@use "./abstracts" as *;
+
+.quote {
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: end;
+    border-top: 1px solid $gray-100;
+    padding-top: $spacing-500;
+
+    @include mq(desktop-small) {
+        grid-column: 6 / span 8;
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .category-badge {
+        grid-column: 1 / -1;
+        padding-bottom: $spacing-500;
+    }
+
+    &__text {
+        font-size: $type-size-600;
+        font-family: $chronicle-deck;
+        line-height: 1.2;
+        font-weight: 300;
+        grid-column: 1 / -1;
+        background: url(svg/quote.svg) no-repeat left top;
+        padding-top: $spacing-500;
+        padding-left: $spacing-600;
+        padding-bottom: $spacing-500;
+
+        @include mq(desktop-small) {
+            grid-column: 1 / span 5;
+            padding-bottom: 0;
+        }
+    }
+
+    &__meta {
+        grid-column: 1 / -1;
+        display: grid;
+        gap: $spacing-200;
+        align-self: end;
+        position: relative;
+        padding-left: $spacing-600;
+
+        @include mq(desktop-small) {
+            padding-left: 0;
+            @include column-divider-after(-1.5rem, auto);
+
+            &::after {
+                background: $gray-200;
+            }
+
+            grid-column: 6 / span 3;
+        }
+    }
+
+    &__source {
+        font-family: $decimal;
+        font-size: $type-size-300;
+    }
+
+    &__caption {
+        font-family: $decimal;
+        font-size: $type-size-200;
+        line-height: 1.5;
+    }
+
+    .divider {
+        grid-column: 1 / -1;
+        margin-top: $spacing-500;
+    }
+}

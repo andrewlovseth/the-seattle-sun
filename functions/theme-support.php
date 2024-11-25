@@ -96,3 +96,4 @@ function bearsmith_remove_wp_embed_js() {
     }
 }
 add_action('init', 'bearsmith_remove_wp_embed_js');
+
