@@ -3,10 +3,10 @@
     $args = wp_parse_args($args);
 
     if(!empty($args)) {
-        $metro_id = $args['metro_id']; 
+        $newsletter_id = $args['newsletter_id']; 
     }
 
-    $spotlight = get_field('spotlight', $metro_id);
+    $spotlight = get_field('spotlight', $newsletter_id);
     if( $spotlight ):
 ?>
 

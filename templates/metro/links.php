@@ -3,10 +3,10 @@
     $args = wp_parse_args($args);
 
     if(!empty($args)) {
-        $metro_id = $args['metro_id']; 
+        $newsletter_id = $args['newsletter_id']; 
     }
 
-    $on_the_web = get_field('on_the_web', $metro_id);
+    $on_the_web = get_field('on_the_web', $newsletter_id);
     $links = get_field('links', $on_the_web->ID);
     if( $links ):
 ?>

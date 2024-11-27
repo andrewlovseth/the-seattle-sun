@@ -3,10 +3,10 @@
     $args = wp_parse_args($args);
 
     if(!empty($args)) {
-        $metro_id = $args['metro_id']; 
+        $newsletter_id = $args['newsletter_id']; 
     }
 
-    $around_town = get_field('around_town', $metro_id);
+    $around_town = get_field('around_town', $newsletter_id);
     $around_town_posts = get_field('posts', $around_town->ID);
     if( $around_town_posts ):
 ?>

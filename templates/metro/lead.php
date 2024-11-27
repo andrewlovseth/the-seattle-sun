@@ -2,10 +2,10 @@
     $args = wp_parse_args($args);
 
     if(!empty($args)) {
-        $metro_id = $args['metro_id']; 
+        $newsletter_id = $args['newsletter_id']; 
     }   
 
-    $lead = get_field('lead', $metro_id);
+    $lead = get_field('lead', $newsletter_id);
     $image = get_post_thumbnail_id($lead->ID);
     $credit = get_post_field('post_content', $image);
     $primary_category = get_primary_category_name($lead->ID);

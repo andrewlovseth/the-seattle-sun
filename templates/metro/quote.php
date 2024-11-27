@@ -3,10 +3,10 @@
 $args = wp_parse_args($args);
 
 if(!empty($args)) {
-    $metro_id = $args['metro_id']; 
+    $newsletter_id = $args['newsletter_id']; 
 }
 
-$quote = get_field('quote', $metro_id);
+$quote = get_field('quote', $newsletter_id);
 $text = get_field('quote', $quote->ID);
 $source = get_field('source', $quote->ID);
 $caption = get_field('caption', $quote->ID);

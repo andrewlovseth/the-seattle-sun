@@ -1,9 +1,9 @@
 <?php
     if(!empty($args)) {
-        $metro_id = $args['metro_id']; 
+        $newsletter_id = $args['newsletter_id']; 
     }
 
-    $headlines = get_field('headlines', $metro_id);
+    $headlines = get_field('headlines', $newsletter_id);
 
 ?>
 

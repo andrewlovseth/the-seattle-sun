@@ -1,6 +1,6 @@
 {
     "key": "group_673ec2536851d",
-    "title": "Metro",
+    "title": "Newsletters",
     "fields": [
         {
             "key": "field_673ec2891a136",
@@ -230,7 +230,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "metro"
+                "value": "newsletter"
             }
         ]
     ],
@@ -255,5 +255,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732478765
+    "modified": 1732749979
 }

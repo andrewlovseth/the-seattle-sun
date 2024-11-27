@@ -17,13 +17,14 @@
                 "id": ""
             },
             "post_type": [
-                "metro"
+                "newsletter"
             ],
             "post_status": "",
             "taxonomy": "",
             "return_format": "object",
             "multiple": 0,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "bidirectional": 0,
             "ui": 1,
             "bidirectional_target": []
@@ -60,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701159724
+    "modified": 1732749927
 }
