@@ -1,18 +1,8 @@
-<?php
-
-/*
-
-    Template Name: Home
-
-*/
-
-get_header(); ?>
+<?php get_header(); ?>
 
     <?php
-        $newsletter = get_field('newsletter');
-        $newsletter_id = $newsletter->ID;
-        
-        $collections = wp_get_post_terms($newsletter_id, 'collection');
+        $newsletter_id = get_the_ID();
+        $collections = wp_get_post_terms($newsletter_id , 'collection');
         $collection = !empty($collections) ? $collections[0]->slug : null;
         $collection_id = !empty($collections) ? $collections[0]->term_id : null;
 

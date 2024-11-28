@@ -6,4 +6,6 @@ body {
 .site {
     display: grid;
     gap: $spacing-700;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    min-height: 100vh;
 }

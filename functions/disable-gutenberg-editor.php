@@ -10,6 +10,7 @@ function bearsmith_disable_editor( $id = false ) {
 
 	$excluded_templates = array(
 		'templates/home.php',
+        'templates/metro.php',
 	);
 
 	$excluded_ids = array(
@@ -29,7 +30,7 @@ function bearsmith_disable_editor( $id = false ) {
 // Disable Gutenberg by template
 function bearsmith_disable_gutenberg( $can_edit, $post_type ) {
     // Disable Gutenberg for 'metro' post type
-    if( $post_type === 'metro' ) {
+    if( $post_type === 'newsletter' ) {
         return false;
     }
 

@@ -1,6 +1,6 @@
 {
     "key": "group_673ec2536851d",
-    "title": "Newsletters",
+    "title": "Ravenna (Metro)",
     "fields": [
         {
             "key": "field_673ec2891a136",
@@ -228,15 +228,15 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_taxonomy",
                 "operator": "==",
-                "value": "newsletter"
+                "value": "template:ravenna"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 2,
     "position": "normal",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
@@ -255,5 +255,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732749979
+    "modified": 1732755033
 }

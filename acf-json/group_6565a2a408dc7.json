@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_6565a2a4d5783",
-            "label": "Edition",
-            "name": "edition",
+            "label": "Newsletter",
+            "name": "newsletter",
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
@@ -61,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732749927
+    "modified": 1732751643
 }

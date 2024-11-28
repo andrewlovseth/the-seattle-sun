@@ -9,8 +9,8 @@
     gap: $spacing-300 $spacing-600;
     align-items: center;
 
-    @include mq(desktop-small) {
-        gap: $spacing-300 $spacing-700;
+    @include mq(desktop-medium) {
+        gap: $spacing-500 $spacing-700;
     }
 
     &__grid {
@@ -39,7 +39,7 @@
             }
 
             @include mq(desktop-medium) {
-                max-width: 16rem;
+                max-width: 20rem;
             }
         }
 
