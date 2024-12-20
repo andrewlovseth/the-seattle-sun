@@ -29,6 +29,4 @@ $caption = get_field('caption', $quote->ID);
             <?php echo $caption; ?>
         </div>
     </div>
-
-    <?php get_template_part('components/dividers/triple-divider'); ?>
 </section>

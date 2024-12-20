@@ -5,5 +5,4 @@
         </svg>
         Success
     </strong>
-
 </span>

@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: subgrid;
     align-items: end;
+    align-self: center;
     border-top: 1px solid $gray-100;
     padding-top: $spacing-500;
 
@@ -11,6 +12,11 @@
         grid-column: 6 / span 8;
         border-top: none;
         padding-top: 0;
+    }
+
+    @include mq(desktop-medium) {
+        padding: 0 $spacing-700;
+
     }
 
     .category-badge {

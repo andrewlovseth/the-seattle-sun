@@ -1,6 +1,9 @@
 @use "./abstracts" as *;
 
 .site-footer {
-    height: 20rem;
-    background: linear-gradient(to bottom, #292929, #3d3d3d);
+    margin: 0 0 $spacing-500 0;
+
+    &__wrapper {
+        padding: $spacing-600 0;
+    }
 }
