@@ -6,3 +6,20 @@ $chronicle: "Chronicle Text G1 A", "Chronicle Text G1 B";
 $chronicle-deck: "Chronicle DeckCond A", "Chronicle DeckCond B";
 $chronicle-compressed: "Chronicle Comp A", "Chronicle Comp B";
 $decimal: "Decimal A", "Decimal B";
+
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+$jetbrains-mono: "JetBrains Mono", monospace;
+
+
+@font-face {
+    font-family: 'StolenHand';
+    src: url('fonts/StolenHand-Alternates.woff2') format('woff2'),
+         url('fonts/StolenHand-Alternates.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$stolen-hand: "StolenHand", cursive;

@@ -8,8 +8,13 @@
 .issue-header {
     gap: $spacing-300 $spacing-600;
     align-items: center;
+    width: 100%;
+    max-width: 40rem;
+    margin-inline: auto;
 
-    @include mq(desktop-medium) {
+    @include mq(desktop-small) {
+        max-width: unset;
+        margin-inline: unset;
         gap: $spacing-500 $spacing-700;
     }
 
@@ -38,7 +43,7 @@
                 margin-top: 0;
             }
 
-            @include mq(desktop-medium) {
+            @include mq(desktop-small) {
                 max-width: 20rem;
             }
         }
@@ -80,10 +85,12 @@
 
             @include mq(tablet) {
                 font-size: $type-size-200;
+                max-width: 7.5rem;
             }
 
             @include mq(desktop-small) {
                 font-size: $type-size-300;
+                max-width: unset;
             }
         }
     }
@@ -131,9 +138,6 @@
                 padding-block-start: $spacing-100;
             }
 
-            @include mq(desktop-small) {
-                font-size: $type-size-500;
-            }
         }
     }
 }
@@ -141,8 +145,13 @@
 .issue-body {
     gap: $spacing-500 $spacing-600;
     align-items: start;
+    width: 100%;
+    max-width: 40rem;
+    margin-inline: auto;
 
     @include mq(desktop-small) {
+        max-width: unset;
+        margin-inline: unset;
         gap: $spacing-600 $spacing-700;
     }
 }

@@ -44,5 +44,5 @@
         </div>
     </div>
 
-    <?php get_template_part('components/subscribe-form'); ?>
+    <?php get_template_part('components/subscribe/metro/add-form'); ?>
 </article>

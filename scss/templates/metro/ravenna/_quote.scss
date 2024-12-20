@@ -19,7 +19,7 @@
     }
 
     &__text {
-        font-size: $type-size-600;
+        font-size: $type-size-700;
         font-family: $chronicle-deck;
         line-height: 1.2;
         font-weight: 300;
@@ -61,9 +61,9 @@
     }
 
     &__caption {
-        font-family: $decimal;
-        font-size: $type-size-200;
+        font-size: $type-size-300;
         line-height: 1.5;
+        font-style: italic;
     }
 
     .divider {

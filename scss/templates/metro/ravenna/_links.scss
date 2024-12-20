@@ -18,7 +18,7 @@
 
 .link {
     display: grid;
-    grid-template-columns: $spacing-700 1fr;
+    grid-template-columns: $spacing-700 minmax(0, 1fr);
     gap: $spacing-400;
     align-items: center;
 
@@ -30,7 +30,7 @@
         display: flex;
         justify-content: center;
         img {
-            max-width: $spacing-500;
+            max-width: $spacing-400;
         }
     }
 
