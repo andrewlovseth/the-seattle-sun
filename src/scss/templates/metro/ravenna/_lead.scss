@@ -1,0 +1,122 @@
+@use "./abstracts" as *;
+@use "sass:color";
+
+.lead {
+    display: grid;
+    gap: $spacing-500;
+
+    @include mq(desktop-small) {
+        grid-column: 2 / span 8;
+    }
+
+    &__header {
+        display: grid;
+        gap: $spacing-300;
+        align-items: end;
+
+        @include mq(desktop-medium) {
+            gap: $spacing-500;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+        }
+    }
+
+    &__info {
+        @include mq(desktop-medium) {
+            padding-bottom: $spacing-300;
+        }
+    }
+
+    &__headline {
+        font-family: $chronicle-deck;
+        font-size: $type-size-800;
+        font-weight: 100;
+        line-height: 1;
+    }
+
+    &__dek {
+        font-size: $type-size-400;
+        line-height: 1.35;
+        font-style: italic;
+        padding-top: $spacing-400;
+    }
+
+    &__author {
+        display: inline-block;
+        margin-top: $column-spacing;
+        border-top: 1px solid $gray-200;
+        border-bottom: 1px solid $gray-200;
+        padding-block: $spacing-200;
+        padding-left: $spacing-200;
+        font-family: $mercury-small-caps;
+        font-size: $type-size-300;
+        color: #2a2a2a;
+        letter-spacing: 0.025em;
+    }
+
+    &__photo {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        gap: $spacing-100;
+
+        &--caption {
+            font-size: $type-size-300;
+            text-wrap: balance;
+            line-height: 1.375em;
+            font-style: italic;
+        }
+
+        &--credit {
+            display: block;
+            font-size: $type-size-050;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #2a2a2a;
+            line-height: 1.25em;
+            text-align: left;
+
+            @include mq(tablet) {
+                font-size: $type-size-100;
+            }
+        }
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__body {
+        position: relative;
+    }
+
+    &__copy {
+        --flow-spacer: 0;
+        text-indent: 1.25rem;
+
+        @include mq(desktop-medium) {
+            columns: 2;
+            column-gap: $column-spacing;
+            @include column-divider-after(50%, auto);
+        }
+        
+        p:first-child {
+            text-indent: 0;
+
+            &::first-letter {
+                initial-letter: 2 2;
+                font-family: $chronicle;
+                margin-right: $spacing-100;
+            }
+        }
+
+        p:last-child {
+            &::after {
+                content: " ◆";
+                font-size: 80%;
+            }
+        }
+    }
+}

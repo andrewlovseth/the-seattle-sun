@@ -11,13 +11,15 @@ function handle_email_subscription() {
 
         if (!is_email($email)) {
             header('HTTP/1.1 400 Bad Request');
-            get_template_part('components/subscribe/metro/error-400-invalid-email');
+            $args = ['message' => 'Invalid email address.'];
+            get_template_part('components/subscribe/metro/error', null, $args);
             exit;
         }
 
         if (empty($email_list_id)) {
             header('HTTP/1.1 400 Bad Request');
-            get_template_part('components/subscribe/metro/error-400-email-list-id');
+            $args = ['message' => 'Email list ID is required.'];
+            get_template_part('components/subscribe/metro/error', null, $args);
             exit;
         }
 
@@ -36,9 +38,9 @@ function handle_email_subscription() {
         ));
 
         if (is_wp_error($response)) {
-            error_log('Supabase error: ' . $response->get_error_message());
             header('HTTP/1.1 500 Internal Server Error');
-            get_template_part('components/subscribe/metro/error-500-checking-subscriber');
+            $args = ['message' => 'Error checking subscriber. Please try again later.'];
+            get_template_part('components/subscribe/metro/error', null, $args);
             exit;
         }
 
@@ -60,20 +62,19 @@ function handle_email_subscription() {
             ));
 
             if (is_wp_error($response)) {
-                error_log('Supabase error: ' . $response->get_error_message());
                 header('HTTP/1.1 500 Internal Server Error');
-                get_template_part('components/subscribe/metro/error-500-saving-subscriber');
+                $args = ['message' => 'Error saving subscriber. Please try again later.'];
+                get_template_part('components/subscribe/metro/error', null, $args);
                 exit;
             }
 
             $subscriber = json_decode(wp_remote_retrieve_body($response), true);
-            error_log('New subscriber response: ' . print_r($subscriber, true));
             $subscriber_id = $subscriber[0]['id'] ?? null;
 
             if (!$subscriber_id) {
-                error_log('Failed to get subscriber ID from response: ' . print_r($subscriber, true));
                 header('HTTP/1.1 500 Internal Server Error');
-                get_template_part('components/subscribe/metro/error-500-creating-subscriber');
+                $args = ['message' => 'Failed to create subscriber.'];
+                get_template_part('components/subscribe/metro/error', null, $args);
                 exit;
             }
         } else {
@@ -83,7 +84,8 @@ function handle_email_subscription() {
 
         if (!$subscriber_id) {
             header('HTTP/1.1 500 Internal Server Error');
-            get_template_part('components/subscribe/metro/error-500-retrieving-subscriber-info');
+            $args = ['message' => 'Failed to retrieve subscriber information.'];
+            get_template_part('components/subscribe/metro/error', null, $args);
             exit;
         }
 
@@ -102,19 +104,19 @@ function handle_email_subscription() {
 
         if (is_wp_error($response)) {
             header('HTTP/1.1 500 Internal Server Error');
-            get_template_part('components/subscribe/metro/error-500-subscribing-to-list');
+            $args = ['message' => 'Error subscribing to the list. Please try again later.'];
+            get_template_part('components/subscribe/metro/error', null, $args);
             exit;
         }
-        error_log('Supabase response: ' . print_r($response, true));
 
         // Success response
         get_template_part('components/subscribe/metro/success');
         exit;
 
     } catch (Exception $e) {
-        error_log('Subscription error: ' . $e->getMessage());
         header('HTTP/1.1 500 Internal Server Error');
-        get_template_part('components/subscribe/metro/error-500-exception');
+        $args = ['message' => 'Error subscribing to the list. Please try again later.'];
+        get_template_part('components/subscribe/metro/error', null, $args);
         exit;
     }
 }

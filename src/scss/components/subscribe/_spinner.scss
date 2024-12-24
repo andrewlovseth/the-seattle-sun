@@ -1,0 +1,72 @@
+@use "./abstracts" as *;
+
+.spinner {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    color: $subscribe-orange-400;
+
+    div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        margin: 2px;
+        border: 2px solid currentColor;
+        border-radius: 50%;
+        animation: spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: currentColor transparent transparent transparent;
+
+        &:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        &:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+    }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.htmx-indicator {
+    opacity:0;
+    transition: opacity 500ms ease-in;
+}
+
+.htmx-request .htmx-indicator{
+    opacity:1;
+}
+
+.htmx-request.htmx-indicator{
+    opacity:1;
+}
+
+.fade-in {
+    animation: fadeIn 500ms ease-in;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,1 +1,0 @@
-<div class="error-message">Failed to create subscriber.</div>

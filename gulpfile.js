@@ -15,7 +15,7 @@ function errorlog(err) {
 
 function style() {
     return gulp
-        .src("scss/style.scss")
+        .src("src/scss/style.scss")
         .pipe(sourcemaps.init())
         .pipe(
             dartSass({
@@ -33,11 +33,11 @@ function watch() {
         proxy: "https://theseattlesun.local/",
     });
 
-    gulp.watch("./scss/**/*.scss", style);
+    gulp.watch("./src/scss/**/*.scss", style);
     gulp.watch("./*.php").on("change", browserSync.reload);
     gulp.watch("./components/**/*.php").on("change", browserSync.reload);
     gulp.watch("./templates/**/*.php").on("change", browserSync.reload);
-    gulp.watch("./js/**/*.js").on("change", browserSync.reload);
+    gulp.watch("./src/js/**/*.js").on("change", browserSync.reload);
 }
 
 export { style, watch };

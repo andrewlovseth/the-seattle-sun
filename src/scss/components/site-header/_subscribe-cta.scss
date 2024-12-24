@@ -1,0 +1,27 @@
+@use "./abstracts" as *;
+
+.subscribe-btn {
+    display: inline-block;
+    font-family: $decimal;
+    font-weight: 500;
+    font-size: 0.6125rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: $spacing-100;
+    padding: 9px $spacing-400 8px;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 400ms ease;
+    color: $subscribe-tan-200;
+    background: $subscribe-orange-400;
+
+    &:hover {
+        cursor: pointer;
+        background: $subscribe-orange-600;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

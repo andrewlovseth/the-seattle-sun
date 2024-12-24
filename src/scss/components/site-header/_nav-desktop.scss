@@ -1,0 +1,30 @@
+@use "./abstracts" as *;
+
+.desktop-nav {
+    &.site-nav {
+        &__list {
+            display: flex;
+            align-items: center;
+            gap: $spacing-500;
+        }
+
+        &__link {
+            display: inline-block;
+            font-family: $decimal;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.6125rem;
+            color: $gray-900;
+            letter-spacing: 0.05em;
+            transition: text-decoration 500ms ease;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: transparent;
+
+            &:hover {
+                text-decoration-color: $subscribe-orange-400;
+            }
+        }
+    }
+}

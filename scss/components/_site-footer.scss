@@ -1,9 +1,0 @@
-@use "./abstracts" as *;
-
-.site-footer {
-    margin: 0 0 $spacing-500 0;
-
-    &__wrapper {
-        padding: $spacing-600 0;
-    }
-}

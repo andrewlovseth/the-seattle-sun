@@ -1,0 +1,38 @@
+@forward "nav-mobile";
+
+@forward "nav-desktop";
+
+@forward "logo";
+
+@forward "subscribe-cta";
+
+@forward "hamburger";
+
+@use "./abstracts" as *;
+
+.site-header {
+    background-color: #f3f3f3;
+    padding: $spacing-300 $spacing-400;
+    border-bottom: 1px solid $gray-300;
+    box-shadow: 0 4px 32px 0 rgba($gray-900, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 4444;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: $spacing-500;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: $spacing-400;
+    }
+
+}

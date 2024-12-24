@@ -9,13 +9,26 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body>
 <?php wp_body_open(); ?>
 
 <div id="page" class="site">
 
-	<header class="site-header content-grid">
+	<header class="site-header">
+		<div class="site-header__left">
+			<?php get_template_part('components/site-header/logo'); ?>
 
+			<?php // get_template_part('components/site-header/nav-desktop'); ?>
+		</div>
+
+		<div class="site-header__right">
+			<?php get_template_part('components/site-header/subscribe-cta'); ?>
+
+			<?php get_template_part('components/site-header/hamburger'); ?>
+		</div>
 	</header>
     
-    <main class="site-content">
+    <?php get_template_part('components/site-header/nav-mobile'); ?>
+
+
+    <main <?php body_class('site-content'); ?>>

@@ -1,1 +1,0 @@
-<div class="error-message">Error checking subscriber. Please try again later.</div>

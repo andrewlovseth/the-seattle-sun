@@ -1,1 +1,0 @@
-<div class="error-message">Email list ID is required.</div>
