@@ -25,6 +25,7 @@
                         $url = get_sub_field('url');
                         $source = get_sub_field('source');
                         $icon = get_sub_field('icon');
+                        $commentary = get_sub_field('commentary');
                     ?>
 
                     <article class="link">
@@ -41,7 +42,12 @@
                                     <span class="link__source"><?php echo $source; ?></span>
                                 </a>
                             </h3>
-                            
+
+                            <?php if($commentary) : ?>
+                                <div class="link__commentary | copy-3">
+                                    <p><?php echo $commentary; ?></p>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </article>
 

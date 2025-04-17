@@ -5,18 +5,57 @@
     gap: $spacing-500 $spacing-700;
     grid-template-columns: subgrid;
 
-    &__placeholder {
+    &__figure {
         grid-column: 1 / -1;
-
         aspect-ratio: 9 / 12;
-        background-color: #e4efd2;
-        border: 1px solid #5d8024;
+        position: relative;
 
         @include mq(desktop-small) {
             grid-row: 1;
             grid-column: 1 / span 7;
             position: sticky;
             top: $spacing-800;
+        }
+
+        .poi {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            display: block;
+
+            @include mq(desktop-small) {
+                width: 54px;
+                height: 54px;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                .poi__popover {
+                    opacity: 1;
+                }
+            }
+
+            &__popover {
+                position: absolute;
+                opacity: 0;
+                right: 0;
+                transition: opacity 500ms ease;
+                background: $gray-0;
+                padding: $spacing-200 $spacing-300;
+                border-radius: $spacing-100;
+
+                box-shadow: 2px 4px 12px rgba($gray-1000, 0.25);
+            }
+
+            &__headline {
+                font-family: $decimal;
+                font-size: $type-size-050;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                white-space: nowrap;
+            }
         }
     }
 
@@ -69,6 +108,15 @@
         font-family: $decimal;
         font-size: $type-size-200;
         font-weight: bold;
+
+        svg {
+            width: 12px;
+            height: 17px;
+
+            path {
+                fill: $gray-300;
+            }
+        }
     }
 
     &__headline {
@@ -83,7 +131,6 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
-
 
         img {
             max-width: 12rem;

@@ -20,23 +20,31 @@
     display: grid;
     grid-template-columns: $spacing-700 minmax(0, 1fr);
     gap: $spacing-400;
-    align-items: center;
 
     a {
         display: block;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     &__icon {
         display: flex;
         justify-content: center;
+        padding-top: $spacing-200;
         img {
-            max-width: $spacing-400;
+            max-width: $spacing-500;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
         }
     }
 
     &__headline {
         font-family: $chronicle-deck;
-        font-size: $type-size-500;
+        font-size: $type-size-400;
         line-height: 1.1;
         font-weight: 400;
 
@@ -51,15 +59,22 @@
         font-family: $mercury-display;
         line-height: 1.1;
         font-weight: 400;
-        font-style: italic;
-        color: $gray-500;
+        color: #2860eb;
+        text-decoration: underline;
         letter-spacing: 0.01em;
+        padding-top: $spacing-100;
+    }
+
+    &__commentary {
+        padding-top: $spacing-200;
+        font-size: $type-size-200;
     }
 
     &__main:hover {
         .link__headline-text {
             text-decoration: underline;
-            text-decoration-thickness: 1px;
+            text-decoration-color: $gray-500;
+            text-decoration-thickness: 0.5px;
             text-underline-offset: 2px;
         }
     }

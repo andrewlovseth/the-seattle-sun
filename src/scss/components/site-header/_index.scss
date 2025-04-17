@@ -11,10 +11,10 @@
 @use "./abstracts" as *;
 
 .site-header {
-    background-color: #f3f3f3;
+    background-color: #f8f8f8;
     padding: $spacing-300 $spacing-400;
     border-bottom: 1px solid $gray-300;
-    box-shadow: 0 4px 32px 0 rgba($gray-900, 0.1);
+    box-shadow: 0 4px 16px 0 rgba($gray-900, 0.1);
     position: sticky;
     top: 0;
     z-index: 4444;

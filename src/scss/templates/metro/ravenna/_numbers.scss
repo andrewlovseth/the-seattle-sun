@@ -21,18 +21,9 @@
     display: grid;
     gap: $spacing-300;
 
-    @include mq(tablet-small) {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
-        align-items: start;
-        gap: $spacing-600;
-    }
-
     @include mq(desktop-small) {
-        grid-template-columns: unset;
-        gap: $spacing-300;
         grid-template-rows: subgrid;
         grid-row: 1 / -1;
-        align-items: end;
     }
 
     & + .number {

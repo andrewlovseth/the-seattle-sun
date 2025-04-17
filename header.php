@@ -4,12 +4,11 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<?php wp_head(); ?>
 	<script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
-
+	<?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
 <div id="page" class="site">
@@ -31,4 +30,4 @@
     <?php get_template_part('components/site-header/nav-mobile'); ?>
 
 
-    <main <?php body_class('site-content'); ?>>
+    <main class="site-content">

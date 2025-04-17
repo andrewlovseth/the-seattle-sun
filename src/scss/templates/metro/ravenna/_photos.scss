@@ -9,4 +9,41 @@
         gap: $spacing-400;
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     }
+
+    &__link {
+        display: block;
+    }
+
+    &__caption {
+        padding: $spacing-200;
+        border-radius: $spacing-100;
+        color: $gray-0;
+        font-family: $decimal;
+    }
+
+    &__credit {
+        text-transform: uppercase;
+        font-size: $type-size-100;
+        font-weight: 700;
+    }
+}
+
+.fslightbox-open {
+    .fslightbox-container {
+        background: rgba($gray-1000, 0.8);
+    }
+
+    .fslightbox-slide-number-container,
+    .fslightbox-toolbar-button[title="Zoom In"],
+    .fslightbox-toolbar-button[title="Zoom Out"],
+    .fslightbox-toolbar-button[title="Thumbnails"],
+    .fslightbox-toolbar-button[title="Turn on slideshow"],
+    .fslightbox-toolbar-button[title="Enter fullscreen"],
+    .fslightbox-thumbs {
+        display: none;
+    }
+
+    .fslightboxc:after {
+        background: unset;
+    }
 }
