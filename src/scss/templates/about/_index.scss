@@ -1,0 +1,18 @@
+@use "./abstracts" as *;
+
+.about-page {
+    .page-title {
+        text-align: center;
+        font-size: $type-size-1000;
+        padding-bottom: $spacing-600;
+    }
+    &__content {
+        @include mq(desktop-small) {
+            grid-column: 4 / span 8;
+        }
+
+        @include mq(desktop-large) {
+            grid-column: 5 / span 6;
+        }
+    }
+}

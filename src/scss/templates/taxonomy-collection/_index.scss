@@ -1,0 +1,20 @@
+@use "./abstracts" as *;
+
+.newsletter-header {
+    text-align: center;
+    padding-bottom: $spacing-700;
+
+    &__description {
+        font-size: $type-size-400;
+        color: $gray-500;
+        font-style: italic;
+    }
+}
+
+.newsletter-archive {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        gap: $spacing-400;
+    }
+}
