@@ -16,7 +16,6 @@
 
     @include mq(desktop-medium) {
         padding: 0 $spacing-700;
-
     }
 
     .category-badge {
@@ -70,6 +69,10 @@
         font-size: $type-size-300;
         line-height: 1.5;
         font-style: italic;
+
+        a {
+            text-decoration: underline;
+        }
     }
 
     .divider {

@@ -101,7 +101,7 @@
             column-gap: $column-spacing;
             @include column-divider-after(50%, auto);
         }
-        
+
         p:first-child {
             text-indent: 0;
 
@@ -116,6 +116,20 @@
             &::after {
                 content: " ◆";
                 font-size: 80%;
+            }
+        }
+
+        ul,
+        ol {
+            padding: 1rem;
+            text-indent: 0;
+            font-size: 0.875em;
+
+            li {
+                break-inside: avoid;
+                & + li {
+                    padding-top: 1rem;
+                }
             }
         }
     }

@@ -114,8 +114,6 @@
         gap: $spacing-400;
         align-items: start;
         align-content: start;
-
-
     }
 
     &__photo {
@@ -151,11 +149,25 @@
                 margin-right: $spacing-100;
             }
         }
-        
+
         p:last-child {
             &::after {
                 content: " ◆";
                 font-size: 80%;
+            }
+        }
+
+        ul,
+        ol {
+            padding: 1rem;
+            text-indent: 0;
+            font-size: 0.875em;
+
+            li {
+                break-inside: avoid;
+                & + li {
+                    padding-top: 1rem;
+                }
             }
         }
     }

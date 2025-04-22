@@ -40,11 +40,11 @@
                 position: absolute;
                 opacity: 0;
                 right: 0;
+                z-index: 10;
                 transition: opacity 500ms ease;
                 background: $gray-0;
                 padding: $spacing-200 $spacing-300;
                 border-radius: $spacing-100;
-
                 box-shadow: 2px 4px 12px rgba($gray-1000, 0.25);
             }
 
