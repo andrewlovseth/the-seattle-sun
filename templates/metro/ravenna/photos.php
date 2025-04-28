@@ -18,7 +18,7 @@
             <?php foreach( $gallery as $photo ): ?>
                 <div class="photos__item">
                     <a data-fslightbox data-caption="<div class='photos__caption | copy-4'><?php echo $photo['caption']; ?> <span class='photos__credit'><?php echo $photo['title']; ?></span></div>" href="<?php echo wp_get_attachment_image_url($photo['ID'], 'full'); ?>" class="photos__link">
-                        <?php echo wp_get_attachment_image($photo['ID'], 'thumbnail'); ?>
+                        <?php echo wp_get_attachment_image($photo['ID'], 'medium'); ?>
                     </a>
                 </div>
             <?php endforeach; ?>
