@@ -68,7 +68,9 @@
                 <?php endif; ?>
             <?php endwhile; ?>
 
-            <?php echo wp_get_attachment_image($map['ID'], 'full'); ?>
+            <div class="map__figure-wrapper">
+                <?php echo wp_get_attachment_image($map['ID'], 'full'); ?>
+            </div>
         </div>
     </section>
 

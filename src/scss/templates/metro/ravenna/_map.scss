@@ -13,8 +13,13 @@
         @include mq(desktop-small) {
             grid-row: 1;
             grid-column: 1 / span 7;
-            position: sticky;
-            top: $spacing-800;
+        }
+
+        &-wrapper {
+            @include mq(desktop-small) {
+                position: sticky;
+                top: $spacing-800;
+            }
         }
 
         .poi {
@@ -22,6 +27,7 @@
             width: 32px;
             height: 32px;
             display: block;
+            z-index: 10;
 
             @include mq(desktop-small) {
                 width: 54px;
