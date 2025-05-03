@@ -1,11 +1,14 @@
+@use "./abstracts" as *;
+
 .flow {
     & > * + * {
         margin-block-start: var(--flow-spacer, 1rem);
     }
 
     & > .wp-block-separator {
-        border-color: rgba(black, 0.1);
-        margin-block-start: 2rem !important;
-        margin-block-end: 2rem !important;
+        border-color: $gray-200;
+        border-width: 1px;
+        margin-block-start: 1.5rem !important;
+        margin-block-end: 1.5rem !important;
     }
 }
