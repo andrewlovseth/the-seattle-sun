@@ -82,5 +82,10 @@
         @include mq(desktop-small) {
             align-self: start;
         }
+
+        a {
+            color: $blue-link;
+            text-decoration: underline;
+        }
     }
 }
