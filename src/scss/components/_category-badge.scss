@@ -8,4 +8,11 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: $gray-400;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 3px;
+        text-decoration-color: $gray-200;
+    }
 }

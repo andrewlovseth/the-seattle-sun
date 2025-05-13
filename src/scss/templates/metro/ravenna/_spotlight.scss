@@ -136,6 +136,21 @@
         }
     }
 
+    &__permalink {
+        width: 1.75rem;
+        height: 1.75rem;
+        transform: translateX(-0.125rem) translateY(0);
+
+        @include mq(desktop-medium) {
+            transform: translateX(-0.125rem) translateY(-0.125rem);
+        }
+
+        svg {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+
     &__body {
         --flow-spacer: 0;
         text-indent: 1.25rem;

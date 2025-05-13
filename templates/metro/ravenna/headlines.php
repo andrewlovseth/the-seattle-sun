@@ -16,6 +16,7 @@
                 $headline = get_the_title($h->ID);
                 $content = wp_strip_all_tags(get_post_field('post_content', $h->ID));
                 $primary_category = get_primary_category_name($h->ID);
+                $primary_category_id = get_primary_category_id($h->ID);
                 $post_thumbnail = get_the_post_thumbnail($h->ID, 'thumbnail', ['class' => 'headline__image']);
             ?>
             <article class="headline">
@@ -27,10 +28,14 @@
                     <?php endif; ?>
 
                     <span><strong><?php echo $headline; ?></strong> &mdash; <?php echo $content; ?></span>
+
+                    <a href="<?php echo get_the_permalink($h->ID); ?>" class="headline__permalink | permalink">
+                        <?php get_template_part('src/svg/link'); ?>
+                    </a>  
                 </h3>
 
                 <?php if($primary_category): ?>
-                    <span class="category-badge"><?php echo $primary_category; ?></span>
+                    <a href="<?php echo get_term_link($primary_category_id, 'category'); ?>" class="category-badge"><?php echo $primary_category; ?></a>
                 <?php endif; ?>
             </article>
         <?php endforeach; ?>

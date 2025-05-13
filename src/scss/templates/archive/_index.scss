@@ -1,0 +1,114 @@
+@use "./abstracts" as *;
+
+.archive {
+    &__content {
+        row-gap: $spacing-700;
+    }
+
+    &__date {
+        font-family: $decimal;
+        font-size: 0.6875rem;
+        color: $gray-400;
+        font-weight: bold;
+        padding-bottom: $spacing-200;
+    }
+
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: $spacing-400;
+        align-items: end;
+        padding-bottom: $spacing-400;
+    }
+
+    &__headline {
+        font-family: $chronicle-deck;
+        font-size: $type-size-500;
+        font-weight: 100;
+        line-height: 1;
+
+        a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+        }
+
+        .permalink {
+            width: 1.25rem;
+            height: 1.25rem;
+            transform: translateX(0) translateY(0);
+            padding: $spacing-050;
+
+            svg {
+                width: 0.75rem;
+                height: 0.75rem;
+            }
+        }
+    }
+
+    &-article__permalink {
+        width: 1.25rem;
+        height: 1.25rem;
+        transform: translateX(0) translateY(0);
+        padding: $spacing-050;
+
+        svg {
+            width: 0.75rem;
+            height: 0.75rem;
+        }
+    }
+
+    .page-header {
+        text-align: center;
+        display: grid;
+        gap: $spacing-400;
+
+        @include mq(tablet) {
+            grid-column: 3 / span 6;
+        }
+
+        @include mq(desktop-small) {
+            grid-column: 5 / span 6;
+        }
+
+        @include mq(desktop-medium) {
+            grid-column: 6 / span 4;
+        }
+
+        .page-title {
+            font-size: $type-size-500;
+            letter-spacing: 0.05em;
+        }
+    }
+
+    .month-group {
+        display: grid;
+        align-items: start;
+        gap: $spacing-600;
+
+        @include mq(tablet) {
+            grid-column: 3 / span 6;
+        }
+
+        @include mq(desktop-small) {
+            grid-column: 5 / span 6;
+        }
+
+        @include mq(desktop-medium) {
+            grid-column: 6 / span 4;
+        }
+
+        & + .month-group {
+            padding-top: $spacing-700;
+            border-top: 1px solid $gray-200;
+        }
+    }
+
+    .month-header {
+        font-family: $chronicle-deck;
+        font-size: $type-size-500;
+        font-weight: 100;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+}

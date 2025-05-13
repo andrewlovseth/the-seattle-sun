@@ -9,6 +9,7 @@
     $image = get_post_thumbnail_id($lead->ID);
     $credit = get_post_field('post_content', $image);
     $primary_category = get_primary_category_name($lead->ID);
+    $primary_category_id = get_primary_category_id($lead->ID);
     $dek = get_field('dek', $lead->ID);
 
 ?>
@@ -27,10 +28,15 @@
 
         <div class="lead__info">
             <?php if($primary_category): ?>
-                <span class="category-badge"><?php echo $primary_category; ?></span>
+               <a href="<?php echo get_term_link($primary_category_id, 'category'); ?>" class="category-badge"><?php echo $primary_category; ?></a>
             <?php endif; ?>
 
-            <h2 class="lead__headline"><?php echo get_the_title($lead->ID); ?></h2>
+            <h2 class="lead__headline">
+                <?php echo get_the_title($lead->ID); ?>
+                <a href="<?php echo get_the_permalink($lead->ID); ?>" class="lead__permalink | permalink">
+                    <?php get_template_part('src/svg/link'); ?>
+                </a>        
+            </h2>
 
             <?php if($dek): ?>
                 <p class="lead__dek"><?php echo $dek; ?></p>

@@ -1,0 +1,29 @@
+@use "./abstracts" as *;
+
+.permalink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-200;
+    transition: all 500ms ease;
+    line-height: 0;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+
+    svg {
+        path {
+            fill: $gray-400;
+            transition: all 500ms ease;
+        }
+    }
+
+    &:hover {
+        background: $gray-100;
+
+        svg {
+            path {
+                fill: $gray-800;
+            }
+        }
+    }
+}

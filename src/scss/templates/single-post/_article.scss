@@ -1,0 +1,48 @@
+@use "./abstracts" as *;
+
+.single-post {
+    &__content {
+        article {
+            @include mq(tablet) {
+                grid-column: 3 / span 6;
+            }
+
+            @include mq(desktop-small) {
+                grid-column: 5 / span 6;
+            }
+
+            @include mq(desktop-medium) {
+                grid-column: 6 / span 4;
+            }
+        }
+
+        .lead__header {
+            grid-template-columns: unset;
+            gap: $spacing-400;
+        }
+
+        .lead__photo {
+            display: block;
+            aspect-ratio: 16 / 9;
+            grid-template-rows: unset;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .lead__info {
+            padding-bottom: 0;
+        }
+
+        .lead__copy {
+            columns: unset;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

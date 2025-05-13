@@ -10,5 +10,9 @@
         border-width: 1px;
         margin-block-start: 1.5rem !important;
         margin-block-end: 1.5rem !important;
+
+        + p {
+            text-indent: 0;
+        }
     }
 }

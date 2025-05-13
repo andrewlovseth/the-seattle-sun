@@ -32,3 +32,13 @@ a {
     font-weight: 400;
     font-size: $type-size-800;
 }
+
+.format {
+    font-family: $decimal;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: $type-size-200;
+    letter-spacing: 0.05em;
+    padding-bottom: $spacing-100;
+    color: $gray-500;
+}

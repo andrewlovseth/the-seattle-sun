@@ -1,0 +1,31 @@
+@use "./abstracts" as *;
+
+.single-post {
+    &__header {
+        gap: $spacing-300 $spacing-600;
+        align-items: center;
+        margin-bottom: $spacing-500;
+
+        @include mq(desktop-small) {
+            gap: $spacing-400 $spacing-700;
+        }
+
+        &__grid {
+            display: grid;
+            align-items: center;
+        }
+
+        .nameplate {
+            &__link {
+                display: grid;
+                max-width: 12rem;
+                margin-inline: auto;
+            }
+
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

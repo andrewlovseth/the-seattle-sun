@@ -22,8 +22,19 @@
             img {
                 margin-top: $spacing-100;
                 border-radius: $spacing-050;
-
             }
+        }
+    }
+
+    .headline__permalink {
+        width: 1.25rem;
+        height: 1.25rem;
+        transform: translateX(0) translateY(0);
+        padding: $spacing-050;
+
+        svg {
+            width: 0.75rem;
+            height: 0.75rem;
         }
     }
 
