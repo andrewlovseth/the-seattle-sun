@@ -8,11 +8,14 @@
 */
 
     $args = wp_parse_args($args);
+    
 
     if(!empty($args)) {
         $newsletter_id = $args['newsletter_id'];
         $collection_id = $args['collection_id'];
         $template_id = $args['template_id'];
+        $home_prev_post = $args['home_prev_post'];
+        $home_next_post = $args['home_next_post'];
     }   
 ?>
 
@@ -48,5 +51,7 @@
         <?php get_template_part('templates/metro/ravenna/links', null, ['newsletter_id' => $newsletter_id]); ?>
 
         <?php get_template_part('templates/metro/ravenna/quote', null, ['newsletter_id' => $newsletter_id]); ?>
+
+        <?php get_template_part('templates/metro/ravenna/pagination', null, ['newsletter_id' => $newsletter_id, 'home_prev_post' => $home_prev_post, 'home_next_post' => $home_next_post]); ?>
     </section>
 </div>

@@ -11,7 +11,7 @@
         $template_path = 'templates/' . $collection . '/' . $template;
         $template_id = !empty($templates) ? $templates[0]->term_id : null;
 
-        $args = ['newsletter_id' => $newsletter_id, 'collection_id' => $collection_id, 'template_id' => $template_id];
+        $args = ['newsletter_id' => $newsletter_id, 'collection_id' => $collection_id, 'template_id' => $template_id, 'home_prev_post' => NULL, 'home_next_post' => NULL];
         get_template_part($template_path, null, $args);
     ?>
 

@@ -64,7 +64,6 @@
             </div>
 
             <?php get_template_part('components/dividers/bottom-divider'); ?>
-
         </div>
 
     </div>

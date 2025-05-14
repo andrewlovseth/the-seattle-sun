@@ -5,7 +5,6 @@ $format_slug = !empty($formats) ? $formats[0]->slug : null;
 
 get_header(); ?>
 
-    <?php //get_template_part('templates/single-post/header'); ?>
     <?php get_template_part('templates/single-post/related-newsletter'); ?>
 
     <?php if ( have_posts() ): ?>

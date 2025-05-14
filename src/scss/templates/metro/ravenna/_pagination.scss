@@ -1,0 +1,72 @@
+@use "./abstracts" as *;
+
+.newsletter-pagination {
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-500;
+    background: #efefef;
+    border: 1px solid $gray-200;
+    padding: $spacing-400;
+    border-radius: $spacing-100;
+
+    &__header {
+        margin: 0;
+        font-family: $decimal;
+        font-size: $type-size-050;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: $gray-500;
+    }
+
+    &__item {
+        &.next {
+            .newsletter-pagination {
+                &__info {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    &__link {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: $spacing-300;
+        align-items: center;
+        transition: all 300ms ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &__image {
+        max-width: 4rem;
+
+        img {
+            border-radius: $spacing-050;
+        }
+    }
+
+    .published {
+        line-height: 1;
+        padding-top: $spacing-200;
+
+        &__issue {
+            display: block;
+            font-family: $mercury-small-caps;
+            font-size: $type-size-050;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #6a6a6a;
+            padding-bottom: $spacing-050;
+        }
+
+        &__date {
+            display: block;
+            font-family: $chronicle-deck;
+            font-size: $type-size-300;
+            letter-spacing: 0.025em;
+        }
+    }
+}

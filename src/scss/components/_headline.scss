@@ -13,20 +13,24 @@
             font-family: $chronicle-deck;
             font-weight: 600;
         }
+    }
 
-        &--has-image {
-            display: grid;
-            gap: $spacing-400;
-            grid-template-columns: 4rem 1fr;
+    &__has-image {
+        display: grid;
+        gap: $spacing-400;
+        grid-template-columns: 4rem 1fr;
 
-            img {
-                margin-top: $spacing-100;
-                border-radius: $spacing-050;
-            }
+        img {
+            margin-top: $spacing-100;
+            border-radius: $spacing-050;
+        }
+
+        .category-badge {
+            grid-column: 1 / -1;
         }
     }
 
-    .headline__permalink {
+    &__permalink {
         width: 1.25rem;
         height: 1.25rem;
         transform: translateX(0) translateY(0);

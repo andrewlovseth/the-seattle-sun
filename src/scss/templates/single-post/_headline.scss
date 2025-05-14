@@ -2,14 +2,8 @@
 
 .single-post {
     .headline {
-        &__title {
-            &--has-image {
-                grid-template-columns: 6rem 1fr;
-
-                @include mq(tablet) {
-                    grid-template-columns: 8rem 1fr;
-                }
-            }
+        &__has-image {
+            grid-template-columns: 6rem 1fr;
         }
     }
 }

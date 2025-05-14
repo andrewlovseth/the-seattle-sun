@@ -70,7 +70,14 @@
             font-weight: 400;
             text-transform: lowercase;
             letter-spacing: 0.05em;
-            opacity: 0.8;
+            color: $gray-900;
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-thickness: 1px;
+                text-underline-offset: 0.125em;
+                text-decoration-color: $gray-400;
+            }
         }
 
         &__tagline {
@@ -81,7 +88,7 @@
             line-height: 1.15;
             text-transform: none;
             letter-spacing: 0;
-            color: #4a4a4a;
+            color: $gray-700;
             padding-top: $spacing-100;
 
             @include mq(tablet) {
@@ -97,17 +104,25 @@
     }
 
     .published {
-        line-height: 1;
-        display: flex;
-        gap: $spacing-100;
-        justify-content: space-between;
-        align-items: center;
         padding-top: $spacing-200;
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        gap: $spacing-300;
 
         @include mq(tablet) {
-            text-align: right;
             padding-top: 0;
+            justify-content: end;
+        }
+
+        &__cover {
+            width: 3rem;
+        }
+
+        &__info {
+            line-height: 1;
             display: block;
+            text-align: right;
         }
 
         &__issue {
@@ -116,10 +131,10 @@
             font-size: $type-size-200;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: #6a6a6a;
+            color: $gray-500;
+            display: block;
 
             @include mq(tablet) {
-                display: block;
                 font-size: $type-size-100;
             }
 
@@ -129,16 +144,18 @@
         }
 
         &__date {
-            display: inline-block;
+            display: block;
             font-family: $chronicle-deck;
             font-size: $type-size-400;
             letter-spacing: 0.025em;
+            padding-block-start: $spacing-100;
 
-            @include mq(tablet) {
-                display: block;
-                padding-block-start: $spacing-100;
+            &:hover {
+                text-decoration: underline;
+                text-decoration-thickness: 1px;
+                text-underline-offset: 0.125em;
+                text-decoration-color: $gray-400;
             }
-
         }
     }
 }

@@ -8,7 +8,7 @@
         align-items: center;
         padding: $spacing-300 $spacing-300;
         gap: $spacing-400;
-        
+
         @include mq(tablet) {
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         }
@@ -47,8 +47,6 @@
             width: 2rem;
             height: 2rem;
         }
-
-
 
         svg {
             width: 100%;

@@ -19,14 +19,12 @@
                 $primary_category_id = get_primary_category_id($h->ID);
                 $post_thumbnail = get_the_post_thumbnail($h->ID, 'thumbnail', ['class' => 'headline__image']);
             ?>
-            <article class="headline">
+            <article class="headline<?php if($post_thumbnail): ?> | headline__has-image<?php endif; ?>">
+                <?php if($post_thumbnail): ?>
+                    <div class="headline__image"><?php echo $post_thumbnail; ?></div>
+                <?php endif; ?>
 
-
-                <h3 class="headline__title | copy-2<?php if($post_thumbnail): ?> | headline__title--has-image<?php endif; ?>">
-                    <?php if($post_thumbnail): ?>
-                        <div class="headline__image"><?php echo $post_thumbnail; ?></div>
-                    <?php endif; ?>
-
+                <h3 class="headline__title | copy-2">
                     <span><strong><?php echo $headline; ?></strong> &mdash; <?php echo $content; ?></span>
 
                     <a href="<?php echo get_the_permalink($h->ID); ?>" class="headline__permalink | permalink">
