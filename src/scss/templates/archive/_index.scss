@@ -21,6 +21,16 @@
         padding-bottom: $spacing-400;
     }
 
+    &__photo {
+        aspect-ratio: 4 / 3;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
     &__headline {
         font-family: $chronicle-deck;
         font-size: $type-size-500;
@@ -81,10 +91,6 @@
             grid-column: 5 / span 6;
         }
 
-        @include mq(desktop-medium) {
-            grid-column: 6 / span 4;
-        }
-
         .page-title {
             font-size: $type-size-500;
             letter-spacing: 0.05em;
@@ -102,10 +108,6 @@
 
         @include mq(desktop-small) {
             grid-column: 5 / span 6;
-        }
-
-        @include mq(desktop-medium) {
-            grid-column: 6 / span 4;
         }
 
         & + .month-group {

@@ -11,10 +11,6 @@
         grid-column: 5 / span 6;
     }
 
-    @include mq(desktop-medium) {
-        grid-column: 6 / span 4;
-    }
-
     &__grid {
         display: grid;
         grid-template-columns: 6rem 1fr;
@@ -40,6 +36,13 @@
             text-transform: lowercase;
             letter-spacing: 0.05em;
             color: $gray-700;
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-thickness: 1px;
+                text-underline-offset: 0.125em;
+                text-decoration-color: $gray-400;
+            }
         }
 
         &__tagline {

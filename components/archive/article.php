@@ -35,7 +35,7 @@
     </div>
 
     <div class="archive__body">
-        <div class="archive__copy | copy-3 flow">
+        <div class="archive__copy | copy-2 flow">
             <p>
                 <?php 
                     $content = wp_strip_all_tags(get_the_content());

@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="edition">
-                        <span class="edition__name"><?php echo $collection->name; ?></span>
+                        <a class="edition__name" href="<?php echo get_the_permalink($collection->ID); ?>"><?php echo $collection->name; ?></a>
                         <span class="edition__tagline"><?php echo $collection->description; ?></span>
                     </div>
 

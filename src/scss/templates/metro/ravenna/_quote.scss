@@ -46,7 +46,7 @@
         gap: $spacing-200;
         align-self: end;
         position: relative;
-        padding-left: $spacing-600;
+        padding: $spacing-200 0 $spacing-200 $spacing-600;
 
         @include mq(desktop-small) {
             padding-left: 0;
@@ -62,7 +62,7 @@
 
     &__source {
         font-family: $decimal;
-        font-size: $type-size-300;
+        font-size: $type-size-200;
     }
 
     &__caption {

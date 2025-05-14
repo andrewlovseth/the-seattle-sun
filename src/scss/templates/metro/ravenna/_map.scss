@@ -24,14 +24,14 @@
 
         .poi {
             position: absolute;
-            width: 32px;
-            height: 32px;
+            width: 1rem;
+            height: 1rem;
             display: block;
             z-index: 10;
 
             @include mq(desktop-small) {
-                width: 54px;
-                height: 54px;
+                width: 2.25rem;
+                height: 2.25rem;
             }
 
             &:hover {
@@ -45,13 +45,19 @@
             &__popover {
                 position: absolute;
                 opacity: 0;
-                right: 0;
+                left: 1.25rem;
+                top: -0.375rem;
                 z-index: 10;
                 transition: opacity 500ms ease;
                 background: $gray-0;
                 padding: $spacing-200 $spacing-300;
                 border-radius: $spacing-100;
                 box-shadow: 2px 4px 12px rgba($gray-1000, 0.25);
+
+                @include mq(desktop-small) {
+                    left: 2.5rem;
+                    top: 0.125rem;
+                }
             }
 
             &__headline {

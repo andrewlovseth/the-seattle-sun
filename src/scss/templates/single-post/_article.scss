@@ -10,10 +10,6 @@
             @include mq(desktop-small) {
                 grid-column: 5 / span 6;
             }
-
-            @include mq(desktop-medium) {
-                grid-column: 6 / span 4;
-            }
         }
 
         .lead__header {

@@ -125,14 +125,13 @@
     }
 
     &__headline {
-        font-family: $chronicle-deck;
-        font-style: italic;
-        font-size: $type-size-800;
-        font-weight: 400;
-        line-height: 1.125;
+        font-family: $chronicle-compressed;
+        font-weight: 100;
+        font-size: $type-size-500;
+        line-height: 1.25;
 
         @include mq(desktop-small) {
-            font-size: $type-size-700;
+            font-size: $type-size-600;
         }
     }
 
@@ -140,10 +139,6 @@
         width: 1.75rem;
         height: 1.75rem;
         transform: translateX(-0.125rem) translateY(0);
-
-        @include mq(desktop-medium) {
-            transform: translateX(-0.125rem) translateY(-0.125rem);
-        }
 
         svg {
             width: 1rem;
