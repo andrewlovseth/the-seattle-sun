@@ -27,11 +27,13 @@
                 <a class="published__date" href="<?php echo get_the_permalink($newsletter_id); ?>"><?php echo get_field('date', $newsletter_id); ?></a>
             </div>
 
-            <div class="published__cover">
-                <a href="<?php echo get_the_permalink($newsletter_id); ?>">
+            <?php if($cover): ?>
+                <div class="published__cover">
+                    <a href="<?php echo get_the_permalink($newsletter_id); ?>">
                     <?php echo wp_get_attachment_image($cover['ID'], 'medium'); ?>
-                </a>
-            </div>
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 
