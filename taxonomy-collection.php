@@ -38,9 +38,11 @@ get_header(); ?>
 
                     <article class="archive-item">
                         <a href="<?php the_permalink(); ?>" class="archive-item__link">
-                            <div class="archive-item__image">
-                                <?php echo wp_get_attachment_image($cover['ID'], 'medium'); ?>
-                            </div>
+                            <?php if($cover): ?>
+                                <div class="archive-item__image">
+                                    <?php echo wp_get_attachment_image($cover['ID'], 'medium'); ?>
+                                </div>
+                            <?php endif; ?>
 
                             <div class="archive-item__info">
                                 <div class="published">

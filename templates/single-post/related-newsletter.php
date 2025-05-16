@@ -43,11 +43,13 @@
         <div class="related-newsletter">
 
             <div class="related-newsletter__grid">
-                <div class="related-newsletter__cover">
-                    <a href="<?php echo get_the_permalink($related_newsletter->ID); ?>">
-                        <?php echo wp_get_attachment_image($newsletter_cover['ID'], 'medium'); ?>
-                    </a>
-                </div>
+                <?php if($newsletter_cover): ?>
+                    <div class="related-newsletter__cover">
+                        <a href="<?php echo get_the_permalink($related_newsletter->ID); ?>">
+                            <?php echo wp_get_attachment_image($newsletter_cover['ID'], 'medium'); ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
 
                 <div class="related-newsletter__content">
                     <div class="published">

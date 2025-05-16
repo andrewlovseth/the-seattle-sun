@@ -33,9 +33,11 @@
             ?>
 
                 <a href="<?php echo get_permalink($prev_post->ID); ?>" class="newsletter-pagination__link">
-                    <div class="newsletter-pagination__image">
-                        <?php echo wp_get_attachment_image($prev_cover['ID'], 'full'); ?>
-                    </div>
+                    <?php if($prev_cover): ?>
+                        <div class="newsletter-pagination__image">
+                            <?php echo wp_get_attachment_image($prev_cover['ID'], 'full'); ?>
+                        </div>
+                    <?php endif; ?>
                     <div class="newsletter-pagination__info">
                         <h5 class="newsletter-pagination__header">&larr; Previous</h5>
 
@@ -65,9 +67,11 @@
                         </div>
                     </div>
 
-                    <div class="newsletter-pagination__image">
-                        <?php echo wp_get_attachment_image($next_cover['ID'], 'full'); ?>
-                    </div>
+                    <?php if($next_cover): ?>
+                        <div class="newsletter-pagination__image">
+                            <?php echo wp_get_attachment_image($next_cover['ID'], 'full'); ?>
+                        </div>
+                    <?php endif; ?>
                 </a>            
             <?php endif; ?>
         </div>
