@@ -8,7 +8,6 @@
 */
 
     $args = wp_parse_args($args);
-    
 
     if(!empty($args)) {
         $newsletter_id = $args['newsletter_id'];
@@ -34,19 +33,25 @@
 
         <?php get_template_part('templates/metro/ravenna/headlines', null, ['newsletter_id' => $newsletter_id]); ?>
 
-        <?php get_template_part('components/dividers/triple-divider'); ?>
+        <?php if(get_field('headlines', $newsletter_id) || get_field('lead', $newsletter_id)): ?>
+            <?php get_template_part('components/dividers/triple-divider'); ?>
+        <?php endif; ?>
 
         <?php get_template_part('templates/metro/ravenna/spotlight', null, ['newsletter_id' => $newsletter_id]); ?>
 
         <?php get_template_part('templates/metro/ravenna/numbers', null, ['newsletter_id' => $newsletter_id]); ?>
 
-        <?php get_template_part('components/dividers/single-divider'); ?>
+        <?php if(get_field('numbers', $newsletter_id)): ?>
+            <?php get_template_part('components/dividers/single-divider'); ?>
+        <?php endif; ?>
 
         <?php get_template_part('templates/metro/ravenna/map', null, ['newsletter_id' => $newsletter_id]); ?>
 
         <?php get_template_part('templates/metro/ravenna/photos', null, ['newsletter_id' => $newsletter_id]); ?>
 
-        <?php get_template_part('components/dividers/single-divider'); ?>
+        <?php if(get_field('photos', $newsletter_id)): ?>
+            <?php get_template_part('components/dividers/single-divider'); ?>
+        <?php endif; ?>
 
         <?php get_template_part('templates/metro/ravenna/links', null, ['newsletter_id' => $newsletter_id]); ?>
 

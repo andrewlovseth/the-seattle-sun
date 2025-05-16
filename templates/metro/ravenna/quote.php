@@ -11,22 +11,26 @@ $text = get_field('quote', $quote->ID);
 $source = get_field('source', $quote->ID);
 $caption = get_field('caption', $quote->ID);
 
+if($text):
+
 ?>
 
-<section class="quote">
-    <span class="category-badge">Quoted</span>
+    <section class="quote">
+        <span class="category-badge">Quoted</span>
 
-    <blockquote class="quote__text">
-        <?php echo $text; ?>    
-    </blockquote>
+        <blockquote class="quote__text">
+            <?php echo $text; ?>    
+        </blockquote>
 
-    <div class="quote__meta">
-        <h4 class="quote__source">  
-            <?php echo $source; ?>
-        </h4>
+        <div class="quote__meta">
+            <h4 class="quote__source">  
+                <?php echo $source; ?>
+            </h4>
 
-        <div class="quote__caption">
-            <?php echo $caption; ?>
+            <div class="quote__caption">
+                <?php echo $caption; ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+<?php endif; ?>
