@@ -15,6 +15,16 @@
         }
     }
 
+    &__text {
+        p {
+            display: inline;
+        }
+        a {
+            text-decoration: underline;
+            color: $blue-link;
+        }
+    }
+
     &__has-image {
         display: grid;
         gap: $spacing-400;

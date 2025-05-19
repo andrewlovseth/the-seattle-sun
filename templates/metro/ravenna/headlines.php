@@ -16,7 +16,7 @@
             <?php foreach($headlines as $h): ?>     
                 <?php
                     $headline = get_the_title($h->ID);
-                    $content = wp_strip_all_tags(get_post_field('post_content', $h->ID));
+                    $content = get_post_field('post_content', $h->ID);
                     $primary_category = get_primary_category_name($h->ID);
                     $primary_category_id = get_primary_category_id($h->ID);
                     $post_thumbnail = get_the_post_thumbnail($h->ID, 'thumbnail', ['class' => 'headline__image']);
@@ -27,7 +27,9 @@
                     <?php endif; ?>
 
                     <h3 class="headline__title | copy-2">
-                        <span><strong><?php echo $headline; ?></strong> &mdash; <?php echo $content; ?></span>
+                        <span class="headline__text">
+                            <strong class="headline__emphasis"><?php echo $headline; ?></strong> &mdash; <?php echo $content; ?>
+                        </span>
 
                         <a href="<?php echo get_the_permalink($h->ID); ?>" class="headline__permalink | permalink">
                             <?php get_template_part('src/svg/link'); ?>
