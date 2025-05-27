@@ -108,6 +108,13 @@
         }
     }
 
+    &__copy {
+        a {
+            text-decoration: underline;
+            color: $blue-link;
+        }
+    }
+
     &__icon {
         display: grid;
         place-items: center;
