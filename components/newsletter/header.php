@@ -29,8 +29,8 @@
 
             <?php if($cover): ?>
                 <div class="published__cover">
-                    <a href="<?php echo get_the_permalink($newsletter_id); ?>">
-                    <?php echo wp_get_attachment_image($cover['ID'], 'medium'); ?>
+                    <a data-fslightbox="cover" href="<?php echo wp_get_attachment_image_url($cover['ID'], 'full'); ?>">
+                        <?php echo wp_get_attachment_image($cover['ID'], 'medium'); ?>
                     </a>
                 </div>
             <?php endif; ?>
