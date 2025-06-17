@@ -11,7 +11,7 @@
     if($lead):
 
     $image = get_post_thumbnail_id($lead->ID);
-    $credit = get_post_field('post_content', $image);
+    $credit = get_the_title($image);
     $primary_category = get_primary_category_name($lead->ID);
     $primary_category_id = get_primary_category_id($lead->ID);
     $dek = get_field('dek', $lead->ID);        
@@ -25,7 +25,7 @@
                 <?php endif; ?>
 
                 <?php if($credit): ?>
-                    <p class="lead__photo--credit"><?php echo $credit; ?></p>
+                    <p class="lead__photo--credit">Photo: <?php echo $credit; ?></p>
                 <?php endif; ?>
             </div>
 
