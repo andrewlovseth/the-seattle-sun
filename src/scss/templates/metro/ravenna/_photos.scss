@@ -7,7 +7,10 @@
     &__grid {
         display: grid;
         gap: $spacing-400;
-        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        @include mq(desktop-small) {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
     }
 
     &__link {
