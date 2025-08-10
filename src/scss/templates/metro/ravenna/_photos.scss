@@ -25,22 +25,33 @@
     }
 
     &__caption {
-        padding: $spacing-200;
+        padding: $spacing-400 $spacing-600;
         border-radius: $spacing-100;
         color: $gray-0;
-        font-family: $decimal;
+        font-family: $chronicle;
+        font-size: $type-size-400;
+        display: block;
+        text-wrap: balance;
+        max-width: 55rem;
+        width: 100%;
+        margin: 0 auto;
     }
 
     &__credit {
+        display: block;
         text-transform: uppercase;
-        font-size: $type-size-100;
-        font-weight: 700;
+        padding-top: $spacing-200;
+
+        font-family: $chronicle-deck;
+        font-size: $type-size-200;
+        letter-spacing: 0.025em;
+        color: $gray-300;
     }
 }
 
 .fslightbox-open {
     .fslightbox-container {
-        background: rgba($gray-1000, 0.8);
+        background: rgba($gray-1000, 0.95);
     }
 
     .fslightbox-slide-number-container,
@@ -53,7 +64,19 @@
         display: none;
     }
 
+    .fslightboxci {
+        padding: 0;
+    }
+
     .fslightboxc:after {
         background: unset;
+    }
+    .fslightbox-toolbar,
+    .fslightbox-slide-btn {
+        background: $subscribe-orange-400;
+    }
+
+    .fslightbox-svg-path {
+        fill: $gray-0;
     }
 }

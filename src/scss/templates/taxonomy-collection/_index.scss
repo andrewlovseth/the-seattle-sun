@@ -27,13 +27,16 @@
 }
 
 .newsletter-archive {
+    gap: $spacing-800 $spacing-700;
+
     &__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
         gap: $spacing-400;
 
         @include mq(desktop-small) {
             grid-column: 4 / span 8;
+            grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
         }
     }
 
@@ -63,4 +66,21 @@
             letter-spacing: 0.025em;
         }
     }
+}
+
+// Season grouping styles
+.season-group {
+    @include mq(desktop-small) {
+        grid-column: 4 / span 8;
+    }
+}
+
+.season-title {
+    font-size: $type-size-500;
+    font-family: $chronicle-compressed;
+    font-weight: 400;
+    color: $gray-800;
+    margin-bottom: $spacing-400;
+    text-align: center;
+    letter-spacing: 0.025em;
 }
