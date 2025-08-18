@@ -1,0 +1,159 @@
+/* Election Results Block Styles */
+.election-results {
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    text-indent: 0;
+    margin-block: 1rem;
+}
+
+.election-results__title {
+    font-family: "Decimal", monospace !important;
+    font-size: 0.75rem !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.1;
+    color: #ffffff;
+    margin: 0;
+    padding: 0.75rem !important;
+    border-bottom: 1px solid #dcdcdc;
+    background: #464646;
+}
+
+.election-results__title-race {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.election-results__title-date {
+    font-size: 0.625rem;
+    opacity: 0.8;
+}
+
+.election-results__body {
+    background: #ffffff;
+}
+
+.election-results__headers {
+    display: grid;
+    grid-template-columns: 1fr 4rem 6rem;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: #fafafa;
+    border-bottom: 1px solid #dcdcdc;
+    font-family: "Decimal", monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #525252;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.election-results__header--votes {
+    text-align: right;
+}
+
+.election-results__list {
+    display: grid;
+    gap: 0;
+    align-items: stretch;
+}
+
+.election-result {
+    display: grid;
+    grid-template-columns: 1fr 4rem 6rem;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #efefef;
+    transition: all 0.2s ease;
+    position: relative;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+
+.election-result:last-child {
+    border-bottom: none;
+}
+
+.election-result__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.election-result__name {
+    font-family: "Decimal", monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #3d3d3d;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.election-result__winner-flag {
+    transform: translateY(1px);
+}
+
+.election-result__winner-flag svg {
+    width: 0.625rem;
+    height: 0.625rem;
+}
+
+.election-result__votes {
+    font-family: "Decimal", monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3d3d3d;
+    line-height: 1;
+    text-align: right;
+}
+
+.election-result__percentage {
+    font-family: "Decimal", monospace;
+    font-size: 1rem;
+    color: #525252;
+    font-weight: 500;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.election-result__progress-bar {
+    height: 3px;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.election-result__progress-bar-wrapper {
+    width: 6rem;
+}
+
+.election-results__total {
+    display: grid;
+    grid-template-columns: 1fr 4rem 6rem;
+    gap: 1rem;
+    padding: 0.5rem 0.75rem;
+    background: #fafafa;
+    border-top: 1px solid #dcdcdc;
+    font-family: "Decimal", monospace;
+    font-size: 1rem;
+    color: #7c7c7c;
+}
+
+.election-results__total-label {
+    font-weight: 400;
+}
+
+.election-results__total-votes {
+    font-weight: 400;
+    text-align: right;
+}

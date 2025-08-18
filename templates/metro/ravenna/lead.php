@@ -49,7 +49,7 @@
 
         <div class="lead__body">
             <div class="lead__copy | copy-2 flow">
-                <?php echo get_post_field('post_content', $lead->ID); ?>
+                <?php echo apply_filters('the_content', get_post_field('post_content', $lead->ID)); ?>
             </div>
         </div>
 

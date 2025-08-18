@@ -1,0 +1,179 @@
+@use "../abstracts" as *;
+
+.election-results {
+    background: $gray-0;
+    overflow: hidden;
+    text-indent: 0;
+    margin-block: $spacing-400;
+    max-width: 32rem;
+
+    &__title {
+        font-family: $decimal;
+        line-height: 1;
+        color: $gray-0;
+        margin: 0;
+        padding: $spacing-300 !important;
+        background: $gray-800;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-race {
+            font-size: $type-size-050;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        &-date {
+            text-align: right;
+            font-size: $type-size-050;
+            color: $gray-200;
+        }
+    }
+
+    &__list {
+        display: grid;
+        gap: 0;
+        align-items: stretch;
+    }
+
+    &__body {
+        border: 1px solid $gray-200;
+        border-top: none;
+    }
+}
+
+.election-result {
+    display: grid;
+    grid-template-columns: 1fr 4rem 6rem;
+    gap: $spacing-400;
+    align-items: center;
+    padding: $spacing-300 $spacing-300;
+    border-bottom: 1px solid $gray-100;
+    transition: all 0.2s ease;
+    position: relative;
+    border-left-width: 4px;
+    border-left-style: solid;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: $spacing-300;
+    }
+
+    &__name {
+        font-family: $decimal;
+        font-size: $type-size-100;
+        font-weight: 600;
+        line-height: 1;
+        color: $gray-900;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: $spacing-200;
+    }
+
+    &__winner-flag {
+        transform: translateY(1px);
+        svg {
+            width: 0.625rem;
+            height: 0.625rem;
+
+            path {
+                fill: $gray-800;
+            }
+        }
+    }
+
+    &__votes {
+        font-family: $decimal;
+        font-size: $type-size-100;
+        font-weight: 600;
+        color: $gray-900;
+        line-height: 1;
+        text-align: right;
+    }
+
+    &__percentage {
+        font-family: $decimal;
+        font-size: $type-size-100;
+        color: $gray-700;
+        font-weight: 500;
+        line-height: 1;
+        text-align: right;
+        display: flex;
+        align-items: center;
+        gap: $spacing-200;
+        justify-content: flex-end;
+
+        &-number {
+            display: inline-block;
+            width: 5rem;
+            text-align: right;
+        }
+    }
+
+    &__progress-bar {
+        height: 3px;
+        border-radius: 2px;
+        transition: width 0.3s ease;
+
+        &-wrapper {
+            width: 2rem;
+        }
+    }
+}
+
+// Table headers
+.election-results__headers {
+    display: grid;
+    grid-template-columns: 1fr 4rem 6rem;
+    gap: $spacing-400;
+    align-items: center;
+    padding: $spacing-200 $spacing-300;
+    background: $gray-50;
+    border-bottom: 1px solid $gray-200;
+    font-family: $decimal;
+    font-size: $type-size-050;
+    font-weight: 600;
+    color: $gray-700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    .election-results__header--pct {
+        text-align: right;
+        width: 4rem;
+    }
+
+    .election-results__header--votes {
+        text-align: right;
+    }
+}
+
+// Total votes section
+.election-results__total {
+    display: grid;
+    grid-template-columns: 1fr 4rem 6rem;
+    gap: $spacing-400;
+    align-items: center;
+    padding: $spacing-200 $spacing-300;
+    background: $gray-50;
+    border-top: 1px solid $gray-200;
+    font-family: $decimal;
+    font-size: $type-size-100;
+    color: $gray-500;
+
+    .election-results__total-label {
+        font-weight: 400;
+    }
+
+    .election-results__total-votes {
+        font-weight: 400;
+        text-align: right;
+    }
+}

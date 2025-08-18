@@ -13,3 +13,5 @@ require_once( plugin_dir_path( __FILE__ ) . '/functions/primary-category.php');
 require_once( plugin_dir_path( __FILE__ ) . '/functions/email-subscription.php');   
 
 require_once( plugin_dir_path( __FILE__ ) . '/functions/url-rewrites.php');
+
+require_once( plugin_dir_path( __FILE__ ) . '/functions/acf-block-election-results.php');

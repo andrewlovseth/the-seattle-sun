@@ -1,0 +1,200 @@
+{
+    "key": "group_689d62a645768",
+    "title": "Block: Election Results",
+    "fields": [
+        {
+            "key": "field_689d62a602058",
+            "label": "Race",
+            "name": "race",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "e.g., Mayor, City Council Position 8",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_689d62a602059",
+            "label": "Results",
+            "name": "results",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "min": 1,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Candidate",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_689d62a60205a",
+                    "label": "Candidate Name",
+                    "name": "candidate_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_689d62a602059"
+                },
+                {
+                    "key": "field_689d62a60205b",
+                    "label": "Votes",
+                    "name": "votes",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": 0,
+                    "max": "",
+                    "step": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_689d62a602059"
+                },
+                {
+                    "key": "field_689d62a60205c",
+                    "label": "Winner",
+                    "name": "winner",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_689d62a602059"
+                },
+                {
+                    "key": "field_689d62a60205d",
+                    "label": "Color",
+                    "name": "color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#2b78e4",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_689d62a602059"
+                }
+            ]
+        },
+        {
+            "key": "field_689d62a60205e",
+            "label": "Total Votes",
+            "name": "total_votes",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Optional. If blank, percentages use the sum of candidate votes.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": "",
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_689d7a3969f8f",
+            "label": "Date",
+            "name": "date",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y",
+            "return_format": "m\/d\/Y",
+            "first_day": 1,
+            "default_to_current_date": 0,
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/acf-election-results"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1755150925
+}
