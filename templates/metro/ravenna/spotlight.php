@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="spotlight__body | copy-2 flow">
-                    <?php echo get_post_field('post_content', $p->ID); ?>
+                    <?php echo apply_filters('the_content', get_post_field('post_content', $p->ID)); ?>
                 </div>
             </article>
         <?php endforeach; ?>
