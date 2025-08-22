@@ -39,7 +39,7 @@ get_header(); ?>
             <?php
             the_posts_pagination(array(
                 'mid_size'  => 2,
-                'prev_text' => __('Previous', 'the-seattle-sun'),
+                'prev_text' => __('Prev', 'the-seattle-sun'),
                 'next_text' => __('Next', 'the-seattle-sun'),
             ));
             ?>

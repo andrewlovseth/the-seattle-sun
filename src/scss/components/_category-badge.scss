@@ -16,3 +16,10 @@
         text-decoration-color: $gray-200;
     }
 }
+
+span.category-badge {
+    &:hover {
+        text-decoration: unset;
+        cursor: auto;
+    }
+}
