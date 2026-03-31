@@ -7,6 +7,7 @@
     }
 
     $on_the_web = get_field('on_the_web', $newsletter_id);
+    if(!$on_the_web) return;
     $links = get_field('links', $on_the_web->ID);
     if( $links ):
 ?>

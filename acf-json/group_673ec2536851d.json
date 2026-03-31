@@ -238,13 +238,6 @@
                 "operator": "==",
                 "value": "template:ravenna"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "newsletter"
-            }
         ]
     ],
     "menu_order": 2,

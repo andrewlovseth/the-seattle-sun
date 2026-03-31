@@ -7,6 +7,7 @@
     }
 
     $by_the_numbers = get_field('by_the_numbers', $newsletter_id);
+    if(!$by_the_numbers) return;
     $numbers = get_field('numbers', $by_the_numbers->ID);
     if( $numbers ):
 ?>

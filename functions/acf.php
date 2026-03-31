@@ -33,3 +33,30 @@ function bearsmith_acf_styles() {
     <?php
 }
 add_action('acf/input/admin_head', 'bearsmith_acf_styles');
+
+// Include Ravenna (Metro) fields in newsletter REST API schema.
+// ACF only auto-registers fields from post_type location rules in the REST
+// schema. The Ravenna group uses a taxonomy location rule (template:ravenna)
+// which ACF skips during schema generation. This filter injects those fields
+// so the REST API accepts writes for lead, headlines, spotlight, etc.
+add_filter('acf/rest/get_fields', function($fields, $resource, $http_method) {
+    if (isset($resource['type']) && $resource['type'] === 'newsletter') {
+        $group = acf_get_fields('group_673ec2536851d');
+        if ($group) {
+            foreach ($group as $field) {
+                // Avoid duplicates
+                $exists = false;
+                foreach ($fields as $f) {
+                    if ($f['name'] === $field['name']) {
+                        $exists = true;
+                        break;
+                    }
+                }
+                if (!$exists) {
+                    $fields[] = $field;
+                }
+            }
+        }
+    }
+    return $fields;
+}, 10, 3);

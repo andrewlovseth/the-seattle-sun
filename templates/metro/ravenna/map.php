@@ -7,8 +7,9 @@
     }
 
     $around_town = get_field('around_town', $newsletter_id);
+    if(!$around_town) return;
     $around_town_posts = get_field('posts', $around_town->ID);
-    $map = get_field('map', $around_town->ID);  
+    $map = get_field('map', $around_town->ID);
 
     if( $around_town_posts ):
 ?>
