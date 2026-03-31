@@ -7,6 +7,7 @@ if(!empty($args)) {
 }
 
 $quote = get_field('quote', $newsletter_id);
+if(!$quote) return;
 $text = get_field('quote', $quote->ID);
 $source = get_field('source', $quote->ID);
 $caption = get_field('caption', $quote->ID);

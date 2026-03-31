@@ -7,6 +7,7 @@
     }
 
     $photos = get_field('photos', $newsletter_id);
+    if(!$photos) return;
     $gallery = get_field('gallery', $photos->ID);
     if( $gallery ):
 ?>
