@@ -171,8 +171,8 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "m\/d\/Y",
-            "return_format": "m\/d\/Y",
+            "display_format": "m/d/Y",
+            "return_format": "m/d/Y",
             "first_day": 1,
             "default_to_current_date": 0,
             "allow_in_bindings": 0
@@ -183,7 +183,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/acf-election-results"
+                "value": "acf/acf-election-results"
             }
         ]
     ],
@@ -196,5 +196,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1755150925
+    "modified": 1774920424
 }

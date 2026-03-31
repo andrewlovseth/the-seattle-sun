@@ -16,8 +16,8 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "m\/d\/Y",
-            "return_format": "d\/m\/Y",
+            "display_format": "m/d/Y",
+            "return_format": "d/m/Y",
             "first_day": 1,
             "allow_in_bindings": 0
         }
@@ -40,5 +40,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1754783968
+    "modified": 1774920424
 }
