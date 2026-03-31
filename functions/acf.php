@@ -33,6 +33,3 @@ function bearsmith_acf_styles() {
     <?php
 }
 add_action('acf/input/admin_head', 'bearsmith_acf_styles');
-
-// Enable ACF REST API write access for all fields
-add_filter('acf/rest_api/field_settings/show_in_rest', '__return_true');
