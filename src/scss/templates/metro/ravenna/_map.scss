@@ -7,7 +7,7 @@
 
     &__figure {
         grid-column: 1 / -1;
-        aspect-ratio: 9 / 12;
+        aspect-ratio: 3 / 5;
         position: relative;
 
         @include mq(desktop-small) {
@@ -16,14 +16,25 @@
         }
 
         &-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
             @include mq(desktop-small) {
                 position: sticky;
                 top: $spacing-800;
             }
         }
 
-        .poi {
+        .map__canvas {
             position: absolute;
+            inset: 0;
+        }
+
+        .poi {
+            // MapLibre sets position: absolute + transform: translate(...) on
+            // the marker element itself, so we do NOT set position here — it
+            // would conflict with the library's positioning logic.
             width: 1rem;
             height: 1rem;
             display: block;
@@ -42,12 +53,21 @@
                 }
             }
 
+            &:focus-visible {
+                outline: none;
+
+                .poi__popover {
+                    opacity: 1;
+                }
+            }
+
             &__popover {
                 position: absolute;
                 opacity: 0;
                 left: 1.25rem;
                 top: -0.375rem;
-                z-index: 10;
+                z-index: 20;
+                pointer-events: none;
                 transition: opacity 500ms ease;
                 background: $gray-0;
                 padding: $spacing-200 $spacing-300;
