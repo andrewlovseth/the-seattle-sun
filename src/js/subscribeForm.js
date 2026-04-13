@@ -1,4 +1,6 @@
 export function setupSubscribeForm() {
+    if (!document.querySelector(".subscribe__input")) return;
+
     let updateDateTime = () => {
         let now = new Date();
 
