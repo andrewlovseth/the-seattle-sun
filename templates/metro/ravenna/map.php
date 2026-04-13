@@ -56,21 +56,36 @@
         </div>
 
         <div class="map__figure">
-            <?php while(have_rows('posts', $around_town->ID)) : the_row(); ?>
-                <?php if( get_row_layout() == 'post' ): ?>
-
-                    <?php
-                        $top = get_sub_field('top');
-                        $left = get_sub_field('left');
-                        $headline = get_sub_field('headline');
-                        get_template_part('src/svg/poi', null, ['top' => $top, 'left' => $left, 'headline' => $headline]);
-                    ?>
-
-                <?php endif; ?>
-            <?php endwhile; ?>
-
             <div class="map__figure-wrapper">
-                <?php echo wp_get_attachment_image($map['ID'], 'full'); ?>
+                <?php
+                    // Collect POIs with valid coordinates into a JSON data island.
+                    // POIs missing latitude/longitude are skipped — not rendered on the map,
+                    // though they still appear in the sidebar list above.
+                    $pois = [];
+                    while(have_rows('posts', $around_town->ID)) : the_row();
+                        if( get_row_layout() == 'post' ) {
+                            $lat = get_sub_field('latitude');
+                            $lng = get_sub_field('longitude');
+
+                            // Skip POIs with empty/null/zero coordinates.
+                            if ( $lat && $lng ) {
+                                $pois[] = [
+                                    'lat'      => (float) $lat,
+                                    'lng'      => (float) $lng,
+                                    'headline' => (string) get_sub_field('headline'),
+                                ];
+                            }
+                        }
+                    endwhile;
+                ?>
+
+                <div class="map__canvas" data-map-canvas></div>
+
+                <template data-map-marker>
+                    <?php get_template_part('src/svg/poi', null, ['headline' => '']); ?>
+                </template>
+
+                <script type="application/json" data-map-pois><?php echo wp_json_encode($pois); ?></script>
             </div>
         </div>
     </section>

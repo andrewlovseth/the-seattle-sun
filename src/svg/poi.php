@@ -1,10 +1,8 @@
-<?php   
-    $top = $args['top'];
-    $left = $args['left'];
-    $headline = $args['headline'];
+<?php
+    $headline = isset($args['headline']) ? $args['headline'] : '';
 ?>
 
-<div class="poi" style="top: <?php echo $top; ?>%; left: <?php echo $left; ?>%;">
+<div class="poi">
     <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="27" cy="27" r="27" fill="#CB36E2" fill-opacity="0.25"/>
         <circle cx="27" cy="27" r="18" fill="#CB36E2" fill-opacity="0.4"/>
@@ -13,9 +11,9 @@
     </svg>
 
 
-    <div class="poi__popover" id="<?php echo sanitize_title_with_dashes($headline); ?>">
+    <div class="poi__popover" id="<?php echo esc_attr(sanitize_title_with_dashes($headline)); ?>">
         <h3 class="poi__headline">
-            <?php echo $headline; ?>
+            <?php echo esc_html($headline); ?>
         </h3>
     </div>
 </div>
